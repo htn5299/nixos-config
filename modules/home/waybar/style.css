@@ -1,0 +1,107 @@
+@import "colors.css";
+
+@define-color fg @base05;
+@define-color fg-alt @base04;
+
+@define-color bg @base00;
+@define-color bg-alt @base02;
+
+* {
+  min-height: 0;
+  font-weight: normal;
+  font-family: "Ubuntu Nerd Font";
+  font-size: 12px;
+  border-radius: 0px;
+  transition: unset;
+}
+
+button {
+  box-shadow: none;
+  border: none;
+  border-radius: 0px;
+}
+
+button:hover {
+  background: inherit;
+  box-shadow: none;
+}
+
+window#waybar {
+  /* background: rgba(0, 0, 0, 0.8); */
+  background: shade(@bg, 0.5);
+  color: @fg;
+  border-radius: 0px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+tooltip {
+  border-radius: 0px;
+  background: @bg;
+  border-color: @bg-alt;
+}
+
+tooltip label {
+  color: @fg;
+}
+
+/* .modules-left { */
+/*   margin-left: 8px; */
+/* } */
+/**/
+/* .modules-right { */
+/*   margin-right: 2px; */
+/* } */
+
+#tray,
+#window,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#bluetooth,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#custom-clipboard,
+#custom-screenshot,
+#custom-colorpicker,
+#custom-notification,
+#custom-pacman,
+#custom-power,
+#custom-wifi,
+#custom-menu,
+#mpd {
+  padding: 2px 6px;
+  /* margin: 0 2px; */
+  color: @fg;
+}
+
+#workspaces button {
+  padding: 2px 6px;
+  background: transparent;
+  color: @fg-alt;
+}
+
+#workspaces button:hover,
+#workspaces button.urgent {
+  background: @fg-alt;
+  color: @bg;
+}
+
+#workspaces button.active {
+  background: @bg-alt;
+  color: @fg;
+}

@@ -1,0 +1,114 @@
+{
+  "layer": "top",
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "format-icons": {
+      "default": " ",
+      "active": " ",
+      "urgent": " "
+    },
+    "disable-scroll": true,
+    "all-outputs": false,
+    "show-special": true
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "<big>{:%a, %d %b}</big>\n<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "none",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "today": "<span><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "icon": false,
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 11,
+    "spacing": 12
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon}󰂯 {volume}%",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "󰴸",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ""
+    },
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio#mic": {
+    "scroll-step": 0,
+    "format": "{format_source}",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager",
+    "tooltip": true
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "tooltip-format-activated": "Idle Inhibitor is active",
+    "tooltip-format-deactivated": "Idle Inhibitor is not active",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "tooltip": true,
+    "tooltip-format": "{timeTo} Power: {power} Watt | {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+  "custom/power": {
+    "format": "",
+    "on-click": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'",
+    "tooltip": false
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂚",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󱅫",
+      "inhibited-none": "󰂚",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -d -sw",
+    "on-click-right": "swaync-client -t -sw",
+    "escape": true
+  }
+}
