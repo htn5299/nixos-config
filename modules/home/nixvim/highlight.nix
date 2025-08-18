@@ -1,11 +1,8 @@
 { config, ... }:
-let
-  palette = config.colorScheme.palette;
-in
 {
-  programs.nixvim.highlight = {
+  programs.nixvim.highlight = with config.colorScheme.palette; {
     FloatBorder = {
-      fg = "#${palette.base03}";
+      fg = "#${base03}";
     };
 
     NormalFloat = { };
@@ -17,28 +14,28 @@ in
     };
 
     Pmenu = {
-      fg = "#${palette.base05}";
+      fg = "#${base05}";
     };
     PmenuSel = {
-      bg = "#${palette.base02}";
+      bg = "#${base02}";
     };
     PmenuSbar = {
-      bg = "#${palette.base01}";
+      bg = "#${base01}";
     };
     PmenuThumb = {
       link = "PmenuSel";
     };
 
     LineNr = {
-      fg = "#${palette.base03}";
+      fg = "#${base03}";
     };
 
     StatusLine = {
-      fg = "#${palette.base03}";
+      fg = "#${base03}";
     };
 
     StatusLineNC = {
-      fg = "#${palette.base03}";
+      fg = "#${base03}";
     };
 
     FzfLuaBorder = {
@@ -56,8 +53,8 @@ in
     };
 
     NvimTreeWindowPicker = {
-      bg = "#${palette.base01}";
-      fg = "#${palette.base04}";
+      bg = "#${base01}";
+      fg = "#${base04}";
     };
   };
 }

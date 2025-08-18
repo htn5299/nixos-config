@@ -1,21 +1,18 @@
 { pkgs, config, ... }:
-let
-  palette = config.colorScheme.palette;
-in
 {
   home.packages = with pkgs; [
     rofi-wayland
   ];
 
-  xdg.configFile."rofi/theme.rasi".text = ''
+  xdg.configFile."rofi/theme.rasi".text = with config.colorScheme.palette; ''
     * {
-      foreground: #${palette.base05};
-      highlight: #${palette.base05};
-      background-color: #${palette.base00};
-      active-background: #${palette.base02};
-      urgent-background: #${palette.base03};
-      urgent-foreground: #${palette.base08};
-      actived: #${palette.base0D};
+      foreground: #${base05};
+      highlight: #${base05};
+      background-color: #${base00};
+      active-background: #${base02};
+      urgent-background: #${base03};
+      urgent-foreground: #${base08};
+      actived: #${base0D};
     }
   '';
   xdg.configFile."rofi/config.rasi".source = ./config.rasi;

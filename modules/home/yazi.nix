@@ -15,11 +15,11 @@
 
     };
     settings = {
-      manager = {
+      mgr = {
         ratio = [
           2
-          4
           3
+          5
         ];
         sort_by = "natural";
         sort_sensitive = true;

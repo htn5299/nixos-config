@@ -2,9 +2,6 @@
   config,
   ...
 }:
-let
-  palette = config.colorScheme.palette;
-in
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -67,15 +64,15 @@ in
         "10,monitor:eDP-1"
 
         # smart gap
-        "w[tv1]s[false], gapsout:0, gapsin:0"
-        "f[1]s[false], gapsout:0, gapsin:0:"
+        # "w[tv1]s[false], gapsout:0, gapsin:0"
+        # "f[1]s[false], gapsout:0, gapsin:0:"
       ];
       windowrule = [
         # smart gap
-        "bordersize 0, floating:0, onworkspace:w[tv1]s[false]"
-        "rounding 0, floating:0, onworkspace:w[tv1]s[false]"
-        "bordersize 0, floating:0, onworkspace:f[1]s[false]"
-        "rounding 0, floating:0, onworkspace:f[1]s[false]"
+        # "bordersize 0, floating:0, onworkspace:w[tv1]s[false]"
+        # "rounding 0, floating:0, onworkspace:w[tv1]s[false]"
+        # "bordersize 0, floating:0, onworkspace:f[1]s[false]"
+        # "rounding 0, floating:0, onworkspace:f[1]s[false]"
 
         # "move 100%-w-40 40,title:^(Bluetooth Devices)$"
         "float,title:^(Volume Control)$"
@@ -122,12 +119,12 @@ in
         follow_mouse = 1;
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
-      general = {
-        gaps_in = 0;
-        gaps_out = 0;
+      general = with config.colorScheme.palette; {
+        gaps_in = 4;
+        gaps_out = 8;
         border_size = 2;
-        "col.active_border" = "0xFF${palette.base04}";
-        "col.inactive_border" = "0xFF${palette.base02}";
+        "col.active_border" = "0xFF${base04}";
+        "col.inactive_border" = "0xFF${base02}";
         resize_on_border = false;
         layout = "dwindle";
       };
@@ -139,7 +136,7 @@ in
           passes = 3;
         };
         shadow = {
-          enabled = false;
+          enabled = true;
         };
       };
       layerrule = [

@@ -35,17 +35,22 @@
     "spacing": 12
   },
   "pulseaudio": {
-    "scroll-step": 1,
-    "format": "{icon} {volume}%",
+    "scroll-step": 5,
+    "justify": "center",
+    "format": "{icon}",
+    "format-bluetooth": "󰂰",
+    "format-muted": "",
     "format-bluetooth": "{icon}󰂯 {volume}%",
+    "tooltip-format": "{icon} {volume}%",
     "format-icons": {
       "headphones": "",
-      "handsfree": "󰴸",
-      "headset": "",
+      "bluetooth": "󰥰",
+      "handsfree": "",
+      "headset": "󱡬",
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ""
+      "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
   },
@@ -71,8 +76,8 @@
     "tooltip-format-activated": "Idle Inhibitor is active",
     "tooltip-format-deactivated": "Idle Inhibitor is not active",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": "󰾪",
+      "deactivated": "󰅶"
     }
   },
   "battery": {
@@ -110,5 +115,12 @@
     "on-click": "swaync-client -d -sw",
     "on-click-right": "swaync-client -t -sw",
     "escape": true
+  },
+  "custom/pomodoro": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-pomodoro --no-work-icons",
+    "on-click": "waybar-module-pomodoro toggle",
+    "on-click-right": "waybar-module-pomodoro reset"
   }
 }

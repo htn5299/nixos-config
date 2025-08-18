@@ -1,28 +1,25 @@
 { config, ... }:
-let
-  palette = config.colorScheme.palette;
-in
 {
   programs.nixvim = {
     colorschemes.base16 = {
       enable = true;
-      colorscheme = {
-        base00 = "#${palette.base00}";
-        base01 = "#${palette.base01}";
-        base02 = "#${palette.base02}";
-        base03 = "#${palette.base03}";
-        base04 = "#${palette.base04}";
-        base05 = "#${palette.base05}";
-        base06 = "#${palette.base06}";
-        base07 = "#${palette.base07}";
-        base08 = "#${palette.base08}";
-        base09 = "#${palette.base09}";
-        base0A = "#${palette.base0A}";
-        base0B = "#${palette.base0B}";
-        base0C = "#${palette.base0C}";
-        base0D = "#${palette.base0D}";
-        base0E = "#${palette.base0E}";
-        base0F = "#${palette.base0F}";
+      colorscheme = with config.colorScheme.palette; {
+        base00 = "#${base00}";
+        base01 = "#${base01}";
+        base02 = "#${base02}";
+        base03 = "#${base03}";
+        base04 = "#${base04}";
+        base05 = "#${base05}";
+        base06 = "#${base06}";
+        base07 = "#${base07}";
+        base08 = "#${base08}";
+        base09 = "#${base09}";
+        base0A = "#${base0A}";
+        base0B = "#${base0B}";
+        base0C = "#${base0C}";
+        base0D = "#${base0D}";
+        base0E = "#${base0E}";
+        base0F = "#${base0F}";
       };
     };
   };

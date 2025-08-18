@@ -12,8 +12,8 @@
       "$mainMod, F, exec, rofi -show drun -show-icons"
       "$mainMod, W, exec, rofi -show window -show-icons"
 
-      "$mainMod, I, exec, hyprpicker -a"
-      "$mainMod SHIFT, I, exec, hyprpicker --format=rgb -a"
+      "$mainMod, X, exec, hyprpicker -a"
+      "$mainMod SHIFT, X, exec, hyprpicker --format=rgb -a"
       "$mainMod, S, exec, hyprshot -m output" # fullscreen
       "$mainMod SHIFT, S, exec, hyprshot -m region" # region
       "$mainMod SHIFT, H, exec, cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"

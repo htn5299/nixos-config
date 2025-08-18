@@ -6,9 +6,9 @@
 
   colorScheme = {
     palette = {
-      base00 = "#1A1C22"; # base        0
+      base00 = "#1A1E26"; # base        0
       base01 = "#2A2C32"; # mantle
-      base02 = "#38393E"; # surface0
+      base02 = "#31353C"; # surface0
       base03 = "#4F5054"; # surface1
       base04 = "#9B9EA2"; # surface2    7
       base05 = "#BEC2C8"; # text        15

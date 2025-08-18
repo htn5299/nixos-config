@@ -61,10 +61,15 @@
             config.allowUnfree = true;
           };
           extraSpecialArgs = {
-            inherit inputs hostname username homeStateVersion;
+            inherit
+              inputs
+              hostname
+              username
+              homeStateVersion
+              ;
           };
           modules = [
-            ./hosts/pavilion/home-manager.nix
+            ./hosts/${hostname}/home-manager.nix
           ];
         };
       };

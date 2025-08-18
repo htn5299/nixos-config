@@ -1,9 +1,6 @@
 { config, ... }:
-let
-  palette = config.colorScheme.palette;
-in
 {
-  programs.hyprlock = {
+  programs.hyprlock = with config.colorScheme.palette; {
     enable = true;
     settings = {
       general = {
@@ -24,23 +21,13 @@ in
       label = [
         {
           monitor = "";
-          text = ''cmd[update:1000] echo $(date +"%H:%M")'';
-          color = "0xFF${palette.base03}";
-          font_size = 64;
+          text = ''cmd[update:1000] echo $(date +"%H:%M, %d-%m-%y")'';
+          color = "0xFF${base03}";
+          font_size = 13;
           font_family = "Ubuntu Nerd Font";
-          position = "0, 80";
-          halign = "center";
-          valign = "center";
-        }
-        {
-          monitor = "";
-          text = ''cmd[update:1000] echo $(date +"%A, %d %B %Y")'';
-          color = "0xFF${palette.base02}";
-          font_size = 24;
-          font_family = "Ubuntu Nerd Font";
-          position = "0, 0";
-          halign = "center";
-          valign = "center";
+          position = "-8, -8";
+          halign = "right";
+          valign = "top";
         }
       ];
 
@@ -52,16 +39,16 @@ in
         dots_spacing = 0.15; # Scale of dots' absolute size, 0.0 - 1.0
         dots_center = true;
         dots_rounding = -1; # -1 default circle, -2 follow input-field rounding
-        inner_color = "0x00${palette.base00}";
-        outer_color = "0xFF${palette.base03}";
-        font_color = "0xFF${palette.base0F}";
+        inner_color = "0x00${base00}";
+        outer_color = "0xFF${base03}";
+        font_color = "0xFF${base0F}";
         hide_input = false;
         rounding = 0;
-        check_color = "0xFF${palette.base0F}";
-        fail_color = "0xFF${palette.base08}"; # if authentication failed, changes outer_color and fail message color
-        position = "0, 60";
+        check_color = "0xFF${base0F}";
+        fail_color = "0xFF${base08}"; # if authentication failed, changes outer_color and fail message color
+        position = "0, 0";
         halign = "center";
-        valign = "bottom";
+        valign = "center";
       };
     };
   };

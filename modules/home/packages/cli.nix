@@ -18,6 +18,7 @@
     lshw
 
     delta
+    cargo
 
     # Utilities
     ffmpeg # media manipulation

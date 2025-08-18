@@ -1,7 +1,4 @@
 { config, ... }:
-let
-  palette = config.colorScheme.palette;
-in
 {
   programs.ghostty = {
     enable = true;
@@ -57,32 +54,32 @@ in
       ];
     };
 
-    themes.custom_theme = {
-      background = "${palette.base00}";
-      foreground = "${palette.base05}";
+    themes.custom_theme = with config.colorScheme.palette; {
+      background = "${base00}";
+      foreground = "${base05}";
 
-      cursor-color = "${palette.base05}";
+      cursor-color = "${base05}";
 
-      selection-background = "${palette.base06}";
-      selection-foreground = "${palette.base00}";
+      selection-background = "${base06}";
+      selection-foreground = "${base00}";
 
       palette = [
-        "0=#${palette.base00}"
-        "1=#${palette.base08}"
-        "2=#${palette.base0B}"
-        "3=#${palette.base0A}"
-        "4=#${palette.base0D}"
-        "5=#${palette.base0E}"
-        "6=#${palette.base0C}"
-        "7=#${palette.base04}"
-        "8=#${palette.base07}"
-        "9=#${palette.base08}"
-        "10=#${palette.base0B}"
-        "11=#${palette.base0A}"
-        "12=#${palette.base0D}"
-        "13=#${palette.base0E}"
-        "14=#${palette.base0C}"
-        "15=#${palette.base05}"
+        "0=#${base00}"
+        "1=#${base08}"
+        "2=#${base0B}"
+        "3=#${base0A}"
+        "4=#${base0D}"
+        "5=#${base0E}"
+        "6=#${base0C}"
+        "7=#${base04}"
+        "8=#${base07}"
+        "9=#${base08}"
+        "10=#${base0B}"
+        "11=#${base0A}"
+        "12=#${base0D}"
+        "13=#${base0E}"
+        "14=#${base0C}"
+        "15=#${base05}"
       ];
     };
   };
