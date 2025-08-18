@@ -16,7 +16,7 @@
       "$mainMod SHIFT, X, exec, hyprpicker --format=rgb -a"
       "$mainMod, S, exec, hyprshot -m output" # fullscreen
       "$mainMod SHIFT, S, exec, hyprshot -m region" # region
-      "$mainMod SHIFT, H, exec, cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"
+      "$mainMod SHIFT, H, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
       "$mainMod SHIFT, L, exec, rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
       "$mainMod SHIFT, B, exec, pkill waybar || waybar &"
       "$mainMod, U, exec, swaync-client -t"
