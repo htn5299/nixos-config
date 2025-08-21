@@ -20,12 +20,17 @@
       ];
 
       env = [
+        # Hint Electron apps to use Wayland
+        "NIXOS_OZONE_WL,1"
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+        "QT_QPA_PLATFORM,wayland"
+
         "GDK_BACKEND,wayland,x11,*"
-        "QT_QPA_PLATFORM,wayland;xcb"
         "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/Pictures/screens"
-        # "HYPRSHOT_DIR,$HOME/Pictures/screens"
       ];
 
       exec = [
@@ -122,18 +127,21 @@
       general = with config.colorScheme.palette; {
         gaps_in = 0;
         gaps_out = 0;
-        border_size = 2;
+
+        border_size = 3;
+
         "col.active_border" = "0xFF${base04}";
         "col.inactive_border" = "0xFF${base02}";
-        resize_on_border = false;
+
+        resize_on_border = true;
+
+        allow_tearing = false;
         layout = "dwindle";
       };
       decoration = {
         rounding = 0;
         blur = {
-          enabled = true;
-          size = 9;
-          passes = 3;
+          enabled = false;
         };
         shadow = {
           enabled = false;
@@ -182,12 +190,19 @@
       };
 
       misc = {
+        force_default_wallpaper = 0;
         disable_hyprland_logo = true;
       };
 
       dwindle = {
         pseudotile = true;
         preserve_split = true;
+      };
+
+      master = {
+        new_status = "slave";
+        new_on_top = true;
+        mfact = 0.5;
       };
     };
   };
