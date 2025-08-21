@@ -11,7 +11,8 @@
 
   home.packages = with pkgs; [
     waybar
-    hyprshot # screenshot
+    # hyprshot # screenshot
+    grimblast
     hyprpicker # color picker
     hypridle
     hyprlock

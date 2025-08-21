@@ -14,12 +14,14 @@
         config = ''
           (defsrc
             caps
-            lmet lalt
           )
 
           (deflayer default
-            esc
-            lalt lmet
+            @cap
+          )
+
+          (defalias
+            cap (tap-hold-press 200 200 esc lmet)
           )
         '';
       };

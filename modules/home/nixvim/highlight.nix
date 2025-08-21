@@ -56,5 +56,22 @@
       bg = "#${base01}";
       fg = "#${base04}";
     };
+
+    GitGutterAdd = {
+      fg = "#${base0B}";
+    };
+
+    GitGutterChange = {
+      fg = "#${base0D}";
+    };
+
+    GitGutterDelete = {
+      fg = "#${base08}";
+    };
+
+    GitGutterChangeDelete = {
+      fg = "#${base0E}";
+    };
+
   };
 }

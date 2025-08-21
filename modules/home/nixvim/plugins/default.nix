@@ -9,7 +9,9 @@
     ./hl-colors.nix
     ./luasnip.nix
     ./mini.nix
-    ./nvim-tree.nix
+    # ./nvim-tree.nix
+    ./neo-tree.nix
+    ./oil.nix
     ./snacks.nix
     ./treesitter.nix
     ./trouble.nix

@@ -8,6 +8,11 @@
           root_folder_label = false;
           # indentMarkers.enable = true;
         };
+        view = {
+          float = {
+            enable = true;
+          };
+        };
         hijack_cursor = true;
         # modified.enable = true;
         filters.custom = [

@@ -7,7 +7,6 @@
 
     # Coreutils replacements
     bat # cat alternative
-    bottom # top alternative
     htop
     btop
     du-dust # du alternative
@@ -53,7 +52,6 @@
     file-roller
 
     # Rice
-    neofetch
     fastfetch
 
     # Downloader

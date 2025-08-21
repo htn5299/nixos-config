@@ -18,9 +18,9 @@
 
         modules-right = [
           "tray"
+          "idle_inhibitor"
           "pulseaudio#mic"
           "pulseaudio"
-          "idle_inhibitor"
           "custom/notification"
           "battery"
           "custom/power"

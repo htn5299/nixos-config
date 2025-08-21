@@ -16,7 +16,7 @@
       monitor = [
         "eDP-1,1366x768, 0x0, 1.0"
         "HDMI-A-1, 1920x1080, -1920x-100, 1.0"
-        "eDP-1,disable"
+        # "eDP-1,disable"
       ];
 
       env = [
@@ -25,7 +25,7 @@
         "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/Pictures/screens"
-        "HYPRSHOT_DIR,$HOME/Pictures/screens"
+        # "HYPRSHOT_DIR,$HOME/Pictures/screens"
       ];
 
       exec = [
@@ -183,6 +183,11 @@
 
       misc = {
         disable_hyprland_logo = true;
+      };
+
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
       };
     };
   };

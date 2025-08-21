@@ -40,19 +40,14 @@
     "format": "{icon}",
     "format-bluetooth": "󰂰",
     "format-muted": "",
-    "format-bluetooth": "{icon}󰂯 {volume}%",
     "tooltip-format": "{icon} {volume}%",
     "format-icons": {
       "headphones": "",
-      "bluetooth": "󰥰",
-      "handsfree": "",
-      "headset": "󱡬",
       "phone": "",
-      "portable": "",
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol -t 3"
   },
   "pulseaudio#mic": {
     "scroll-step": 0,

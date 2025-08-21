@@ -51,7 +51,6 @@
     zsh
 
     acpi
-    bottom
     duf
     lsof
     pciutils

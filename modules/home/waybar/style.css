@@ -98,7 +98,8 @@ tooltip label {
 #workspaces button:hover,
 #workspaces button.urgent {
   /* background: @fg-alt; */
-  color: @fg-alt;
+  /* color: @bg; */
+  color: @base08;
 }
 
 #workspaces button.active {

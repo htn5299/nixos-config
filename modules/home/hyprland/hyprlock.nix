@@ -22,7 +22,7 @@
         {
           monitor = "";
           text = ''cmd[update:1000] echo $(date +"%H:%M, %d-%m-%y")'';
-          color = "0xFF${base03}";
+          color = "0xFF${base04}";
           font_size = 13;
           font_family = "Ubuntu Nerd Font";
           position = "-8, -8";
