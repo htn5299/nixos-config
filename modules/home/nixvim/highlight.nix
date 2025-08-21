@@ -73,5 +73,13 @@
       fg = "#${base0E}";
     };
 
+    NeoTreeGitConflict = {
+      fg = "#${base09}";
+    };
+
+    NeoTreeGitUnTracked = {
+      fg = "#${base09}";
+    };
+
   };
 }
