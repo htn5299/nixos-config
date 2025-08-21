@@ -3,6 +3,7 @@
     neo-tree = {
       enable = true;
       # usePopupsForInput = false;
+      closeIfLastWindow = true;
       popupBorderStyle = "single";
       eventHandlers = {
         neo_tree_window_after_open = ''
