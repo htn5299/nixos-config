@@ -92,17 +92,16 @@ tooltip label {
 #workspaces button {
   padding: 2px 6px;
   background: transparent;
-  color: @base03;
+  color: @fg-alt;
 }
 
 #workspaces button:hover,
 #workspaces button.urgent {
-  /* background: @fg-alt; */
-  /* color: @bg; */
-  color: @base08;
+  background: @fg-alt;
+  color: @bg;
 }
 
 #workspaces button.active {
-  /* background: @bg-alt; */
+  background: @bg-alt;
   color: @fg;
 }

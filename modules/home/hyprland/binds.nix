@@ -11,7 +11,7 @@
       "$mainMod, RETURN, exec, $terminal"
       "$mainMod, O, exec, $fileManager"
       "$mainMod ALT, F, togglefloating,"
-      "$mainMod ALT, X, togglesplit,"
+      "$mainMod ALT, W, togglesplit,"
 
       "$mainMod, V, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
       "$mainMod ALT, I, exec, hyprpicker -an"
