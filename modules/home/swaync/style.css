@@ -45,6 +45,7 @@ trough {
   border-radius: 0;
   margin: 16px 16px 0 16px;
   background: @crust;
+  /* background: alpha(@crust, 0.8); */
   color: @text;
   padding: 0;
 }

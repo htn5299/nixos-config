@@ -18,7 +18,6 @@
     };
 
     bindings = {
-      "h" = "cycle deband";
       "Alt+l" = "add sub-scale +0.1";
       "Alt+h" = "add sub-scale -0.1";
       "Alt+j" = "add sub-pos +1";
@@ -52,12 +51,10 @@
       geometry = "50%:50%";
 
       # OSD
-      osd-duration = 500;
-      osd-font = "Ubuntu Nerd Font";
-      osd-font-size = 24;
+      osd-font = "NotoSans Nerd Font";
 
       # Sub appearance
-      sub-font = "Ubuntu Nerd Font";
+      sub-font = "NotoSans Nerd Font";
       sub-auto = "fuzzy";
       sub-color = "1/1/1/1";
       sub-bold = "yes";

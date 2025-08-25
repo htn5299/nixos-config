@@ -35,19 +35,21 @@
     "spacing": 12
   },
   "pulseaudio": {
-    "scroll-step": 5,
-    "justify": "center",
     "format": "{icon}",
-    "format-bluetooth": "󰂰",
-    "format-muted": "",
-    "tooltip-format": "{icon} {volume}%",
+    "format-bluetooth": "{icon}",
+    "tooltip-format": "{icon}  {desc} - {volume}%",
+    "format-muted": "󰖁",
     "format-icons": {
       "headphones": "",
+      "handsfree": "",
+      "headset": "",
       "phone": "",
+      "portable": "",
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol -t 3"
+    "on-click": "pavucontrol -t 3",
+    "smooth-scrolling-threshold": 1
   },
   "pulseaudio#mic": {
     "scroll-step": 0,
@@ -71,8 +73,8 @@
     "tooltip-format-activated": "Idle Inhibitor is active",
     "tooltip-format-deactivated": "Idle Inhibitor is not active",
     "format-icons": {
-      "activated": "󰾪",
-      "deactivated": "󰅶"
+      "activated": "󰔡",
+      "deactivated": "󰨙"
     }
   },
   "battery": {
@@ -95,14 +97,14 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "󱅫",
-      "none": "󰂚",
-      "dnd-notification": "󰂛",
-      "dnd-none": "󰂛",
-      "inhibited-notification": "󱅫",
-      "inhibited-none": "󰂚",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰂛"
+      "notification": "󰅸",
+      "none": "󰂜",
+      "dnd-notification": "",
+      "dnd-none": "󰪑",
+      "inhibited-notification": "󰅸",
+      "inhibited-none": "󰂜",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": "󰪑"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -110,12 +112,5 @@
     "on-click": "swaync-client -d -sw",
     "on-click-right": "swaync-client -t -sw",
     "escape": true
-  },
-  "custom/pomodoro": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "waybar-module-pomodoro --no-work-icons",
-    "on-click": "waybar-module-pomodoro toggle",
-    "on-click-right": "waybar-module-pomodoro reset"
   }
 }

@@ -141,10 +141,12 @@
       decoration = {
         rounding = 0;
         blur = {
-          enabled = false;
+          enabled = true;
+          size = 8;
+          passes = 2;
         };
         shadow = {
-          enabled = false;
+          enabled = true;
         };
       };
       layerrule = [

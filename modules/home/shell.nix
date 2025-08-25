@@ -1,23 +1,5 @@
 { hostname, username, ... }:
 {
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      directory = {
-        fish_style_pwd_dir_length = 5;
-        read_only = " 󰌾";
-      };
-      right_format = "$time";
-      time = {
-        disabled = false;
-        format = "[$time]($style) ";
-        time_format = "%T";
-        style = "purple";
-      };
-    };
-  };
-
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
@@ -63,8 +45,8 @@
 
       # Productivity corner
       declare -A pomo_options
-      pomo_options["work"]="52"
-      pomo_options["break"]="17"
+      pomo_options["wk"]="52"
+      pomo_options["br"]="17"
 
       pomodoro () {
         if [ -n "$1" -a -n "''${pomo_options["$1"]}" ]; then
@@ -75,8 +57,8 @@
         fi
       }
 
-      alias work="pomodoro 'work'"
-      alias br="pomodoro 'break'"
+      alias work="pomodoro 'wk'"
+      alias br="pomodoro 'br'"
     '';
   };
 }

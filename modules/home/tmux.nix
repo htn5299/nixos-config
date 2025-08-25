@@ -4,25 +4,12 @@
   inputs,
   ...
 }:
-let
-  tmux-nvim = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tmux.nvim";
-    version = "unstable-2023-01-06";
-    src = pkgs.fetchFromGitHub {
-      owner = "aserowy";
-      repo = "tmux.nvim/";
-      rev = "57220071739c723c3a318e9d529d3e5045f503b8";
-      sha256 = "sha256-zpg7XJky7PRa5sC7sPRsU2ZOjj0wcepITLAelPjEkSI=";
-    };
-  };
-
-in
 {
   programs.tmux = with config.colorScheme.palette; {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
     baseIndex = 1;
-    mouse = false;
+    mouse = true;
     escapeTime = 0;
     keyMode = "vi";
     plugins = with pkgs; [
@@ -36,10 +23,9 @@ in
           set -g @minimal-tmux-indicator-str ' '
         '';
       }
-
-      tmux-nvim
-      tmuxPlugins.better-mouse-mode
       tmuxPlugins.yank
+      tmuxPlugins.better-mouse-mode
+      tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig =
 
@@ -80,16 +66,16 @@ in
         # keybindings
         unbind C-b
         unbind r
+        unbind-key -T copy-mode-vi MouseDragEnd1Pane
+        bind-key -T copy-mode-vi MouseDown1Pane select-pane\; send-keys -X clear-selection
+        bind -n MouseDrag1Pane if -Ft= '#{mouse_any_flag}' 'if -Ft= \"#{pane_in_mode}\" \"copy-mode -eM\" \"send-keys -M\"' 'copy-mode -eM'
         set -g prefix C-a
         bind C-a send-prefix
-        bind-key -T copy-mode-vi v send-keys -X begin-selection
-        bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
-        bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
         bind c new-window -c "#{pane_current_path}"
-        bind '"' split-window -v -c "#{pane_current_path}"
-        bind '%' split-window -h -c "#{pane_current_path}"
+        bind s split-window -v -c "#{pane_current_path}"
+        bind v split-window -h -c "#{pane_current_path}"
         bind space last-window
-        bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
+        bind r source-file ~/.config/tmux/tmux.conf \; display "tmux reloaded!"
       '';
   };
 }

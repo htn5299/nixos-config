@@ -6,6 +6,7 @@
     ./packages
     ./rofi
     ./script
+    ./starship
     ./swaync
     ./waybar
     ./ghostty.nix

@@ -11,16 +11,25 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.qogir-theme;
-      name = "Qogir-Dark";
+      # package = pkgs.qogir-theme;
+      # name = "Qogir-Dark";
+
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3-dark";
     };
     iconTheme = {
-      package = pkgs.qogir-icon-theme;
-      name = "Qogir-Dark";
+      # package = pkgs.qogir-icon-theme;
+      # name = "Qogir-Dark";
+
+      # package = pkgs.arc-icon-theme;
+      # name = "Arc";
+
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
     };
     font = {
       name = "Ubuntu Nerd Font";
-      size = 11;
+      # size = 11;
     };
   };
 }
