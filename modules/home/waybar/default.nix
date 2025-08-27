@@ -4,29 +4,7 @@
     enable = true;
     style = ./style.css;
     settings = [
-      {
-        position = "top";
-        reload_style_on_change = true;
-        include = [ "${./config.json}" ];
-        modules-left = [
-          "hyprland/workspaces"
-        ];
-
-        modules-center = [
-          "hyprland/window"
-        ];
-
-        modules-right = [
-          "tray"
-          "pulseaudio#mic"
-          "pulseaudio"
-          "custom/power"
-          "idle_inhibitor"
-          "custom/notification"
-          "battery"
-          "clock"
-        ];
-      }
+      { include = [ "${./config.jsonc}" ]; }
     ];
   };
   home.file.".config/waybar/colors.css".text = with config.colorScheme.palette; ''
