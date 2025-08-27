@@ -86,7 +86,7 @@
     "format": "{icon}",
     "tooltip": true,
     "tooltip-format": "{timeTo} Power: {power} Watt | {capacity}%",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"]
   },
   "custom/power": {
     "format": "",

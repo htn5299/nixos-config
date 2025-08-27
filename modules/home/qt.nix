@@ -12,10 +12,9 @@
   xdg.configFile = {
     "Kvantum/kvantum.kvconfig".text = ''
       [General]
-      theme=catppuccin-frappe-blue
+      theme=Nordic-Darker-Solid
     '';
-    "Kvantum/catppuccin-frappe-blue".source =
-      "${pkgs.catppuccin-kvantum}/share/Kvantum/catppuccin-frappe-blue";
+    "Kvantum/Nordic-Darker-Solid".source = "${pkgs.nordic}/share/Kvantum/Nordic-Darker-Solid";
   };
 
 }

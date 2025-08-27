@@ -18,12 +18,12 @@
 
         modules-right = [
           "tray"
-          "idle_inhibitor"
           "pulseaudio#mic"
           "pulseaudio"
+          "custom/power"
+          "idle_inhibitor"
           "custom/notification"
           "battery"
-          "custom/power"
           "clock"
         ];
       }

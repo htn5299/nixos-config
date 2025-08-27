@@ -14,8 +14,8 @@
       # package = pkgs.qogir-theme;
       # name = "Qogir-Dark";
 
-      package = pkgs.adw-gtk3;
-      name = "adw-gtk3-dark";
+      package = pkgs.nordic;
+      name = "Nordic-darker";
     };
     iconTheme = {
       # package = pkgs.qogir-icon-theme;

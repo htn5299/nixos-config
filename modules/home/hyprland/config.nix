@@ -16,7 +16,7 @@
       monitor = [
         "eDP-1,1366x768, 0x0, 1.0"
         "HDMI-A-1, 1920x1080, -1920x-100, 1.0"
-        # "eDP-1,disable"
+        "eDP-1,disable"
       ];
 
       env = [
