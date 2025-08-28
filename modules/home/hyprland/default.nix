@@ -10,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    waybar
     grimblast
     hyprpicker # color picker
     hypridle

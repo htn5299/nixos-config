@@ -16,7 +16,7 @@
       "$mainMod, V, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
       "$mainMod ALT, I, exec, hyprpicker -an"
       "$mainMod ALT, B, exec, pkill waybar || waybar &"
-      "$mainMod ALT, N, exec, swaync-client -t"
+      "$mainMod, R, exec, swaync-client -t"
       "$mainMod ALT, M, exec, rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
       ", Print, exec, grimblast --notify --freeze copysave area"
 

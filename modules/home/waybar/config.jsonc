@@ -4,14 +4,15 @@
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces",
-  ],
-  "modules-center": [
     "hyprland/window"
   ],
+  // "modules-center": [
+  // ],
   "modules-right": [
+    // "group/info",
     "group/sound",
-    "tray",
     "idle_inhibitor",
+    "tray",
     "custom/power",
     "battery",
     "clock"
@@ -35,28 +36,16 @@
     },
     "modules": [
       "pulseaudio",
-      "pulseaudio#mic",
       "pulseaudio/slider",
+      "pulseaudio#mic",
     ]
   },
   "group/info": {
     "orientation": "horizontal",
     "modules": [
-      "cpu",
-      "memory",
       "disk#ssd",
-    ]
-  },
-  "group/together": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "custom/power",
-      "custom/notification",
-      "idle_inhibitor",
+      "memory",
+      "cpu",
     ]
   },
   "clock": {
@@ -140,7 +129,6 @@
     "format": "{format_source}",
     "format-source": "󰍬",
     "format-source-muted": "󰍭",
-    "tooltip-format": "{volume}% {format_source}",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "scroll-step": 0,
   },
@@ -179,26 +167,6 @@
   "custom/power": {
     "format": "󰤄",
     "on-click": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'",
-    "tooltip": false
+    "tooltip-format": "Power Menu"
   },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "󰅸",
-      "none": "󰂜",
-      "dnd-notification": "",
-      "dnd-none": "󰪑",
-      "inhibited-notification": "󰅸",
-      "inhibited-none": "󰂜",
-      "dnd-inhibited-notification": "",
-      "dnd-inhibited-none": "󰪑"
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -d -sw",
-    "on-click-right": "swaync-client -t -sw",
-    "escape": true
-  }
 }
