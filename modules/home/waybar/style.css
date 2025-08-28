@@ -9,6 +9,8 @@
     Font Awesome;
   font-size: 13px;
   min-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 window#waybar {
@@ -67,12 +69,20 @@ button {
 #mode,
 #together,
 #sound,
+#battery,
 #info,
-#tray {
+#tray,
+#idle_inhibitor,
+#custom-power,
+#custom-notification,
+#cpu,
+#memory,
+#disk {
   padding: 0 6px;
-  margin: 2px 1px;
+  /* margin: 2px 1px; */
   color: @text;
   background-color: @mantle;
+  background-color: transparent;
 }
 
 #together,
@@ -83,18 +93,11 @@ button {
 #sound {
   padding: 0 4px;
 }
-#pulseaudio {
-  padding: 0 2px;
-}
 
-#idle_inhibitor,
-#custom-power,
-#battery,
-#custom-notification,
-#cpu,
-#memory,
-#disk {
-  padding: 0 6px;
+#pulseaudio,
+#backlight-slider,
+#pulseaudio-slider {
+  padding: 0 2px;
 }
 
 #window,
@@ -103,9 +106,25 @@ button {
 }
 
 .modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
+  margin-left: 1px;
 }
 
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  min-width: 80px;
+  min-height: 6px;
+  border-radius: 8px;
+  background-color: alpha(@surface1, 0.6);
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  border-radius: 8px;
+  background-color: @text;
 }

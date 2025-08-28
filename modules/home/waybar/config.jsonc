@@ -4,15 +4,16 @@
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces",
+  ],
+  "modules-center": [
     "hyprland/window"
   ],
-  // "modules-center": [
-  // ],
   "modules-right": [
-    "tray",
-    "group/info",
     "group/sound",
-    "group/together",
+    "tray",
+    "idle_inhibitor",
+    "custom/power",
+    "battery",
     "clock"
   ],
   "hyprland/workspaces": {
@@ -28,9 +29,14 @@
   },
   "group/sound": {
     "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
     "modules": [
-      "pulseaudio#mic",
       "pulseaudio",
+      "pulseaudio#mic",
+      "pulseaudio/slider",
     ]
   },
   "group/info": {
@@ -43,17 +49,20 @@
   },
   "group/together": {
     "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
     "modules": [
-      "custom/notification",
-      "battery",
-      "idle_inhibitor",
       "custom/power",
+      "custom/notification",
+      "idle_inhibitor",
     ]
   },
   "clock": {
     "interval": 60,
     // "timezone": "Europe/Budapest",
-    "format": "{:%d/%m %R 󰃭}",
+    "format": "{:%d/%m %R}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -91,7 +100,7 @@
   },
   "disk#ssd": {
     "interval": 60,
-    "format": "{path} {free} ",
+    "format": "{free} ",
     "path": "/",
     "tooltip": true,
     "warning": 80,
@@ -107,21 +116,25 @@
     "spacing": 12
   },
   "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": " ",
-    "format-bluetooth-muted": " {icon}",
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "tooltip-format": "{volume}% {icon} | {desc}",
+    "format-muted": "",
     "format-icons": {
       "headphones": "",
-      "hands-free": "",
+      "handsfree": "",
       "headset": "",
       "phone": "",
       "portable": "",
-      "car": "",
-      "default": ""
+      "car": " ",
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol -t 3",
-    "scroll-step": 5,
+    "smooth-scrolling-threshold": 1
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
@@ -131,13 +144,18 @@
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     "scroll-step": 0,
   },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal",
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "tooltip-format-activated": "Idle Inhibitor is active",
     "tooltip-format-deactivated": "Idle Inhibitor is not active",
     "format-icons": {
-      "activated": "󰌢",
-      "deactivated": "󰤄"
+      "activated": "󰈈",
+      "deactivated": "󰈉"
     }
   },
   "battery": {
@@ -159,7 +177,7 @@
     ]
   },
   "custom/power": {
-    "format": "",
+    "format": "󰤄",
     "on-click": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'",
     "tooltip": false
   },
