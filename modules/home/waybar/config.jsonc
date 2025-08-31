@@ -1,104 +1,36 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "left",
   "reload_style_on_change": true,
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window"
+    "hyprland/workspaces"
   ],
-  // "modules-center": [
-  // ],
   "modules-right": [
-    // "group/info",
-    "group/sound",
-    "idle_inhibitor",
+    "pulseaudio",
+    "pulseaudio#mic",
     "tray",
-    "custom/power",
+    "idle_inhibitor",
     "battery",
     "clock"
   ],
   "hyprland/workspaces": {
     "format": "{name}",
-    "format-icons": {
-      "default": " ",
-      "active": " ",
-      "urgent": " "
-    },
     "disable-scroll": true,
     "all-outputs": false,
-    "show-special": true
-  },
-  "group/sound": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "pulseaudio",
-      "pulseaudio/slider",
-      "pulseaudio#mic",
-    ]
-  },
-  "group/info": {
-    "orientation": "horizontal",
-    "modules": [
-      "disk#ssd",
-      "memory",
-      "cpu",
-    ]
-  },
-  "clock": {
-    "interval": 60,
-    // "timezone": "Europe/Budapest",
-    "format": "{:%d/%m %R}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "on-scroll": 1,
-      "on-click-right": "mode",
-      "format": {
-        "months": "<span><b>{}</b></span>",
-        "days": "<span><b>{}</b></span>",
-        "weeks": "<span>W{}</span>",
-        "weekdays": "<span><b>{}</b></span>",
-        "today": "<span color='#D4B77D'><b><u>{}</u></b></span>"
-      }
-    },
-    "actions": {
-      "on-click-right": "mode",
-      "on-click-forward": "tz_up",
-      "on-click-backward": "tz_down",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
+    "show-special": true,
+    "persistent-workspaces": {
+      "*": [
+        1,
+        2
+      ]
     }
-  },
-  "cpu": {
-    "interval": 3,
-    "format": "{usage}% ",
-  },
-  "memory": {
-    "interval": 3,
-    "format": "{}% ",
-    "tooltip-format": "Used: {used:0.1f}G/{total:0.1f}G. Swap: {swapUsed:0.1f}G/{swapTotal:0.1f}G",
-    "states": {
-      "critical": 80
-    }
-  },
-  "disk#ssd": {
-    "interval": 60,
-    "format": "{free} ",
-    "path": "/",
-    "tooltip": true,
-    "warning": 80,
-    "critical": 90
   },
   "hyprland/window": {
     "format": "{title}",
+    "max-length": 50,
     "icon": false,
-    "tooltip": false
+    "icon-size": 11,
+    "tooltip-format": "{class} | {title}"
   },
   "tray": {
     "icon-size": 11,
@@ -111,7 +43,7 @@
     "format-muted": "",
     "format-icons": {
       "headphones": "",
-      "handsfree": "",
+      "hands-free": "",
       "headset": "",
       "phone": "",
       "portable": "",
@@ -122,20 +54,15 @@
         ""
       ]
     },
-    "on-click": "pavucontrol -t 3",
-    "smooth-scrolling-threshold": 1
+    "scroll-step": 2,
+    "on-click": "pavucontrol -t 3"
   },
   "pulseaudio#mic": {
     "format": "{format_source}",
     "format-source": "󰍬",
     "format-source-muted": "󰍭",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
-    "scroll-step": 0,
-  },
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 100,
-    "orientation": "horizontal",
+    "scroll-step": 0
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -164,9 +91,30 @@
       "󰁹"
     ]
   },
-  "custom/power": {
-    "format": "󰤄",
-    "on-click": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'",
-    "tooltip-format": "Power Menu"
-  },
+  "clock": {
+    "interval": 60,
+    "format": "{:%H\n%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span><b>{}</b></span>",
+        "days": "<span><b>{}</b></span>",
+        "weeks": "<span>W{}</span>",
+        "weekdays": "<span><b>{}</b></span>",
+        "today": "<span color='#D4B77D'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  }
 }

@@ -1,14 +1,14 @@
 {
   programs.nixvim = {
-    plugins.schemastore = {
-      enable = true;
-      json = {
-        enable = true;
-      };
-      yaml = {
-        enable = true;
-      };
-    };
+    # plugins.schemastore = {
+    #   enable = true;
+    #   json = {
+    #     enable = true;
+    #   };
+    #   yaml = {
+    #     enable = true;
+    #   };
+    # };
     lsp = {
       inlayHints.enable = true;
       servers = {
