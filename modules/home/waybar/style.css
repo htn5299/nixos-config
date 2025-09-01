@@ -6,7 +6,7 @@
   font-family:
     Ubuntu Nerd Font,
     JetBrainsMono Nerd Font;
-  font-size: 12px;
+  font-size: 13px;
   min-height: 0;
 }
 
@@ -35,18 +35,17 @@ button {
 #workspaces button {
   padding: 2px 8px;
   background-color: transparent;
-  color: @subtext0;
-}
-
-#workspaces button:hover {
   color: @subtext1;
 }
 
-#workspaces button.active {
-  color: lighter(@text);
+#workspaces button:hover,
+#workspaces button.urgent {
+  background-color: @mantle;
+  color: @text;
 }
 
-#workspaces button.urgent {
+#workspaces button.active {
+  background-color: @base;
   color: @text;
 }
 

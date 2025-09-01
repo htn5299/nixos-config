@@ -23,6 +23,5 @@
     ./translate.nix
     ./xdg.nix
     ./yazi.nix
-    ./zen.nix
   ];
 }

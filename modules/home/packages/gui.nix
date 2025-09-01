@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     telegram-desktop
+    firefox
     # vesktop
     discord
     qbittorrent
