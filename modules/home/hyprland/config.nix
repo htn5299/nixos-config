@@ -69,15 +69,15 @@
         "10,monitor:eDP-1"
 
         # smart gap
-        "w[tv1]s[false], gapsout:0, gapsin:0"
-        "f[1]s[false], gapsout:0, gapsin:0:"
+        # "w[tv1]s[false], gapsout:0, gapsin:0"
+        # "f[1]s[false], gapsout:0, gapsin:0:"
       ];
       windowrule = [
         # smart gap
-        "bordersize 0, floating:0, onworkspace:w[tv1]s[false]"
-        "rounding 0, floating:0, onworkspace:w[tv1]s[false]"
-        "bordersize 0, floating:0, onworkspace:f[1]s[false]"
-        "rounding 0, floating:0, onworkspace:f[1]s[false]"
+        # "bordersize 0, floating:0, onworkspace:w[tv1]s[false]"
+        # "rounding 0, floating:0, onworkspace:w[tv1]s[false]"
+        # "bordersize 0, floating:0, onworkspace:f[1]s[false]"
+        # "rounding 0, floating:0, onworkspace:f[1]s[false]"
 
         # "move 100%-w-40 40,title:^(Bluetooth Devices)$"
         "float,title:^(Volume Control)$"
@@ -125,15 +125,15 @@
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
       general = with config.colorScheme.palette; {
-        gaps_in = 0;
-        gaps_out = 0;
+        gaps_in = 3;
+        gaps_out = 6;
 
         border_size = 1;
 
         "col.active_border" = "0xFF${base04}";
         "col.inactive_border" = "0xFF${base02}";
 
-        resize_on_border = true;
+        resize_on_border = false;
 
         allow_tearing = false;
         layout = "dwindle";

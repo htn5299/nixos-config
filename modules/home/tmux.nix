@@ -43,7 +43,7 @@
         set-option -g status-interval 1
         set-option -g wrap-search off
 
-        set -g status-position bottom
+        set -g status-position top
         set -g allow-passthrough on
 
         set -g status-style 'fg=#${base03},bg=default'

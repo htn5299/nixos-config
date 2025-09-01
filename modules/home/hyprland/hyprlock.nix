@@ -21,7 +21,7 @@
       label = [
         {
           monitor = "";
-          text = ''cmd[update:1000] echo $(date +"%H:%M, %d-%m-%y")'';
+          text = ''cmd[update:1000] echo $(date +"%d-%m-%y, %H:%M")'';
           color = "0xFF${base04}";
           font_size = 13;
           font_family = "Ubuntu Nerd Font";

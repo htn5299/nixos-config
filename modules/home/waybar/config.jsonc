@@ -1,15 +1,18 @@
 {
   "layer": "top",
-  "position": "left",
+  "position": "bottom",
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces"
   ],
+  "modules-center": [
+    "hyprland/window"
+  ],
   "modules-right": [
-    "pulseaudio",
-    "pulseaudio#mic",
-    "tray",
     "idle_inhibitor",
+    "tray",
+    "pulseaudio",
+    // "pulseaudio#mic",
     "battery",
     "clock"
   ],
@@ -26,15 +29,16 @@
     }
   },
   "hyprland/window": {
-    "format": "{title}",
+    "format": "{}",
     "max-length": 50,
     "icon": false,
     "icon-size": 11,
+    "swap-icon-label": false,
     "tooltip-format": "{class} | {title}"
   },
   "tray": {
     "icon-size": 11,
-    "spacing": 12
+    "spacing": 16
   },
   "pulseaudio": {
     "format": "{icon}",
@@ -93,7 +97,7 @@
   },
   "clock": {
     "interval": 60,
-    "format": "{:%H\n%M}",
+    "format": "{:%R}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
