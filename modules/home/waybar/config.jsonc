@@ -9,10 +9,10 @@
     "hyprland/window"
   ],
   "modules-right": [
-    "idle_inhibitor",
     "tray",
     "pulseaudio",
     // "pulseaudio#mic",
+    "idle_inhibitor",
     "battery",
     "clock"
   ],
@@ -20,13 +20,13 @@
     "format": "{name}",
     "disable-scroll": true,
     "all-outputs": false,
-    "show-special": true,
-    "persistent-workspaces": {
-      "*": [
-        1,
-        2
-      ]
-    }
+    // "persistent-workspaces": {
+    //   "*": [
+    //     1,
+    //     2
+    //   ]
+    // },
+    "show-special": true
   },
   "hyprland/window": {
     "format": "{}",
