@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces"
@@ -33,17 +33,14 @@
     "max-length": 50,
     "icon": false,
     "icon-size": 11,
-    "swap-icon-label": false,
-    "tooltip-format": "{title} | {class}"
+    "swap-icon-label": false
   },
   "tray": {
     "icon-size": 12,
     "spacing": 16
   },
   "pulseaudio": {
-    "format": "{icon}",
-    "format-bluetooth": "{icon}",
-    "tooltip-format": "{volume}% {icon} | {desc}",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
       "headphones": "",
@@ -52,11 +49,7 @@
       "phone": "",
       "portable": "",
       "car": " ",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ""
     },
     "scroll-step": 2,
     "on-click": "pavucontrol -t 3"
@@ -110,7 +103,7 @@
         "days": "<span><b>{}</b></span>",
         "weeks": "<span>W{}</span>",
         "weekdays": "<span><b>{}</b></span>",
-        "today": "<span color='#D4B77D'><b><u>{}</u></b></span>"
+        "today": "<span color='#B4686F'><b><u>{}</u></b></span>"
       }
     },
     "actions": {

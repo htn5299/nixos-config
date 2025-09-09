@@ -43,10 +43,10 @@ trough {
 .notification-background {
   box-shadow: inset 0 0 0 1px @surface1;
   border-radius: 0;
-  margin: 8px;
-  margin-top: 0;
-  background: @crust;
-  /* background: alpha(@crust, 0.8); */
+  margin: 16px;
+  margin-bottom: 0;
+  /* background: @crust; */
+  background: alpha(@crust, 0.8);
   color: @text;
   padding: 0;
 }
@@ -154,6 +154,7 @@ trough {
 }
 
 .control-center .notification-background {
+  background: @crust;
   border-radius: 0;
   box-shadow: inset 0 0 0 1px @surface1;
   margin: 4px 10px;

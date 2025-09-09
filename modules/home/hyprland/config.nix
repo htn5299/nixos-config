@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}:
+{ config, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -48,11 +45,6 @@
         "wl-paste --type image --watch cliphist store"
         "fcitx5 -d -r"
         "fcitx5-remote -r"
-        # "uwsm finalize"
-        # "nm-applet --indicator"
-        # "blueman-applet"
-        # "swww-daemon"
-        # "hyprctl dispatch workspace 1"
         ''dconf write /org/gnome/desktop/wm/preferences/button-layout "'appmenu'"''
         ''dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"''
       ];
@@ -150,16 +142,16 @@
         };
       };
       layerrule = [
-        # "ignorealpha 0, swaync-control-center"
+        "ignorealpha 0, swaync-control-center"
 
-        # "blur, swaync-control-center"
-        # "ignorezero, swaync-control-center"
-        #
-        # "blur, swaync-notification-window"
-        # "ignorezero, swaync-notification-window"
-        #
-        # "blur, waybar"
-        # "ignorezero, waybar"
+        "blur, swaync-control-center"
+        "ignorezero, swaync-control-center"
+
+        "blur, swaync-notification-window"
+        "ignorezero, swaync-notification-window"
+
+        "blur, waybar"
+        "ignorezero, waybar"
       ];
       animations = {
         bezier = [

@@ -31,29 +31,21 @@ tooltip label {
 }
 
 #workspaces button {
-  padding: 0 6px;
+  padding: 1px 6px;
+  margin: 0 2px;
   background-color: transparent;
   color: @subtext1;
-  /* margin: 2px 1px; */
-  margin-right: 2px;
 }
 
 #workspaces button:hover,
 #workspaces button.urgent {
-  /* background-color: @mantle; */
-  /* box-shadow: inset 0 0 0px 1px @base; */
-  color: @text;
+  box-shadow: inset 0 -1px 0 0 @subtext1;
 }
 
 #workspaces button.active {
-  background-color: @base;
-  /* box-shadow: inset 0 0 0px 1px @surface1; */
+  box-shadow: inset 0 -1px 0 0 @text;
   color: @text;
 }
-
-/* .modules-left > widget:first-child > #workspaces > button:first-child { */
-/*   margin-left: 2px; */
-/* } */
 
 #mpris,
 #clock,
@@ -72,6 +64,6 @@ tooltip label {
 #cpu,
 #memory,
 #disk {
-  padding: 0 8px;
+  padding: 1px 8px;
   color: @text;
 }
