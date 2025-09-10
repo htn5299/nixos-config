@@ -42,8 +42,7 @@ tooltip label {
 #clock,
 #battery,
 #tray,
-#idle_inhibitor,
-#custom-center {
+#idle_inhibitor {
   padding: 6px;
   color: @text;
 }

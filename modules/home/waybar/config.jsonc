@@ -8,7 +8,6 @@
   "modules-right": [
     "tray",
     "idle_inhibitor",
-    "custom/center",
     "battery",
     "clock"
   ],
@@ -43,7 +42,8 @@
       "󰂀",
       "󰂂",
       "󰁹"
-    ]
+    ],
+    "on-click": "swaync-client -t -sw"
   },
   "clock": {
     "format": "{:%H\n%M}",
@@ -56,11 +56,5 @@
         "today": "<span><b><u>{}</u></b></span>"
       }
     }
-  },
-  "custom/center": {
-    "tooltip": false,
-    "format": "",
-    "on-click": "swaync-client -t -sw",
-    "escape": true
   }
 }
