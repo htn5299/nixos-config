@@ -9,7 +9,8 @@
     "hyprland/window"
   ],
   "modules-right": [
-    "tray"
+    "tray",
+    "clock"
   ],
   "hyprland/workspaces": {
     "format": "{name}",
@@ -24,6 +25,19 @@
   },
   "tray": {
     "icon-size": 12,
-    "spacing": 14
+    "spacing": 12
+  },
+  "clock": {
+    "format": "{:%R}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "today": "<span><b><u>{}</u></b></span>"
+      }
+    },
+    "on-click": "swaync-client -t -sw"
   }
 }
