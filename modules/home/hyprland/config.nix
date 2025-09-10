@@ -138,14 +138,12 @@
           passes = 2;
         };
         shadow = {
-          enabled = true;
+          enabled = false;
         };
       };
       layerrule = [
-        # "ignorealpha 0, swaync-control-center"
-
-        # "blur, swaync-control-center"
-        # "ignorezero, swaync-control-center"
+        "blur, swaync-control-center"
+        "ignorezero, swaync-control-center"
 
         "blur, swaync-notification-window"
         "ignorezero, swaync-notification-window"
