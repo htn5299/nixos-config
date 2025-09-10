@@ -19,14 +19,14 @@ scale trough {
 }
 
 trough highlight {
-  background: @text;
+  background-color: @subtext1;
 }
 
 trough slider {
   /* margin: -0.5rem; */
   border-radius: 0;
   transition: all 0.2s ease;
-  background-color: @pink;
+  background-color: @subtext1;
 }
 
 /* notifications */
@@ -191,11 +191,11 @@ trough slider {
 }
 
 .widget-dnd > switch:checked {
-  background: @pink;
+  background: @subtext1;
 }
 
 .widget-dnd > switch slider {
-  background: @pink;
+  background: @subtext1;
   border-radius: 0;
 }
 
@@ -268,17 +268,17 @@ trough slider {
   font-size: 1.5rem;
 }
 
-.widget-volume trough highlight,
-.widget-volume trough slider {
-  background: @blue;
-}
+/* .widget-volume trough highlight, */
+/* .widget-volume trough slider { */
+/*   background: @blue; */
+/* } */
 
 .widget-backlight label {
   color: @yellow;
   font-size: 1.5rem;
 }
 
-.widget-backlight trough highlight,
-.widget-backlight trough slider {
-  background: @yellow;
-}
+/* .widget-backlight trough highlight, */
+/* .widget-backlight trough slider { */
+/*   background: @yellow; */
+/* } */

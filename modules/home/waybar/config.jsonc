@@ -1,60 +1,29 @@
 {
   "layer": "top",
-  "position": "left",
+  "position": "bottom",
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces"
   ],
+  "modules-center": [
+    "hyprland/window"
+  ],
   "modules-right": [
-    "tray",
-    "idle_inhibitor",
-    "battery",
-    "clock"
+    "tray"
   ],
   "hyprland/workspaces": {
     "format": "{name}",
     "all-outputs": false
   },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 70,
+    "icon": false,
+    "icon-size": 11,
+    "swap-icon-label": false
+  },
   "tray": {
     "icon-size": 12,
-    "spacing": 12
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "󰈈",
-      "deactivated": "󰈉"
-    }
-  },
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon}",
-    "tooltip": true,
-    "tooltip-format": "{timeTo} Power: {power} watt\n{capacity}%",
-    "format-icons": [
-      "󰁻",
-      "󰁼",
-      "󰁾",
-      "󰂀",
-      "󰂂",
-      "󰁹"
-    ],
-    "on-click": "swaync-client -t -sw"
-  },
-  "clock": {
-    "format": "{:%H\n%M}",
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "calendar": {
-      "mode": "month",
-      "weeks-pos": "left",
-      "on-scroll": 1,
-      "format": {
-        "today": "<span><b><u>{}</u></b></span>"
-      }
-    }
+    "spacing": 14
   }
 }
