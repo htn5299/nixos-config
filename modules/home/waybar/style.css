@@ -50,9 +50,9 @@ tooltip label {
 }
 
 .modules-left > widget:first-child > #workspaces > button:first-child {
-  margin-left: 6px;
+  margin-left: 3px;
 }
 
 .modules-right > widget:last-child > #clock {
-  margin-right: 6px;
+  margin-right: 3px;
 }
