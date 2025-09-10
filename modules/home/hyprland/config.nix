@@ -39,7 +39,7 @@
         "gsettings set org.gnome.desktop.wm.preferences button-layout appmenu"
       ];
       exec-once = [
-        "waybar"
+        # "waybar"
         "waypaper --restore"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -138,14 +138,14 @@
           passes = 2;
         };
         shadow = {
-          enabled = false;
+          enabled = true;
         };
       };
       layerrule = [
-        "ignorealpha 0, swaync-control-center"
+        # "ignorealpha 0, swaync-control-center"
 
-        "blur, swaync-control-center"
-        "ignorezero, swaync-control-center"
+        # "blur, swaync-control-center"
+        # "ignorezero, swaync-control-center"
 
         "blur, swaync-notification-window"
         "ignorezero, swaync-notification-window"

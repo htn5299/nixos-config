@@ -4,15 +4,11 @@
   all: unset;
   font-size: 14px;
   font-family: "Ubuntu Nerd Font";
-  transition: 200ms;
+  transition: 100ms;
 }
 
-trough highlight {
-  background: @text;
-}
-
-scale {
-  margin: 0 7px;
+trough {
+  background-color: @base;
 }
 
 scale trough {
@@ -22,51 +18,43 @@ scale trough {
   border-radius: 0;
 }
 
+trough highlight {
+  background: @text;
+}
+
 trough slider {
-  margin: -10px;
+  /* margin: -0.5rem; */
   border-radius: 0;
-  /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.8); */
   transition: all 0.2s ease;
-  background-color: @blue;
-}
-
-trough slider:hover {
-  /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.8), 0 0 8px @blue; */
-}
-
-trough {
-  background-color: @surface0;
+  background-color: @pink;
 }
 
 /* notifications */
-
 .notification-background {
-  box-shadow: inset 0 0 0 1px @surface1;
+  box-shadow: inset 0 0 0 1px @surface0;
   border-radius: 0;
-  margin: 16px;
+  margin: 1rem;
   margin-bottom: 0;
-  /* background: @crust; */
-  background: alpha(@crust, 0.8);
+  background-color: alpha(shade(@crust, 0.9), 0.8);
   color: @text;
-  padding: 0;
 }
 
 .notification-background .notification {
-  padding: 7px;
+  padding: 0.5rem;
   border-radius: 0;
 }
 
 .notification-background .notification.critical {
-  box-shadow: inset 0 0 4px 0 @red;
+  box-shadow: inset 0 0 1px 0 @red;
 }
 
 .notification .notification-content {
-  margin: 7px;
+  margin: 0.5rem;
 }
 
 .notification .notification-content overlay {
   /* icons */
-  margin: 4px;
+  margin-right: 0.5rem;
 }
 
 .notification-content .summary {
@@ -74,7 +62,7 @@ trough {
 }
 
 .notification-content .time {
-  color: @subtext0;
+  color: @subtext1;
 }
 
 .notification-content .body {
@@ -85,22 +73,6 @@ trough {
   min-height: 3.4em;
 }
 
-/* .notification-background .close-button { */
-/*   margin: 7px; */
-/*   padding: 2px; */
-/*   border-radius: 0; */
-/*   color: @base; */
-/*   background-color: @red; */
-/* } */
-/**/
-/* .notification-background .close-button:hover { */
-/*   background-color: @maroon; */
-/* } */
-/**/
-/* .notification-background .close-button:active { */
-/*   background-color: @pink; */
-/* } */
-
 .close-button {
   background: transparent;
   color: transparent;
@@ -109,10 +81,10 @@ trough {
 .notification .notification-action {
   border-radius: 0;
   color: @text;
-  box-shadow: inset 0 0 0 1px @surface1;
-  margin: 4px;
-  padding: 8px;
-  font-size: 0.2rem; /* controls the button size not text size*/
+  box-shadow: inset 0 0 0 1px @surface0;
+  margin: 0.5rem;
+  padding: 4px;
+  font-size: 0.2rem;
 }
 
 .notification .notification-action {
@@ -140,24 +112,34 @@ trough {
 .notification trough,
 .notification progressbar {
   border-radius: 0;
-  padding: 3px 0;
 }
-/* control center */
 
+/* control center */
 .control-center {
-  /* box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px @surface0; */
-  box-shadow: inset 0 0 0 1px @surface0;
-  border-radius: 0;
-  background-color: @crust;
+  background-color: shade(@crust, 0.9);
   color: @text;
-  padding: 14px;
+  padding: 1rem;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+/* Window behind control center and on all other monitors */
+.blank-window {
+  background: transparent;
 }
 
 .control-center .notification-background {
-  background: @crust;
+  background-color: shade(@crust, 0.9);
   border-radius: 0;
-  box-shadow: inset 0 0 0 1px @surface1;
-  margin: 4px 10px;
+  box-shadow: inset 0 0 0 1px @surface0;
+  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 .control-center .notification-background .notification {
@@ -177,8 +159,7 @@ trough {
   border-radius: 0;
   color: @text;
   background-color: @base;
-  /* box-shadow: inset 0 0 0 1px @surface1; */
-  padding: 8px;
+  padding: 4px 8px;
 }
 
 .control-center .widget-title button:hover {
@@ -189,29 +170,20 @@ trough {
   background-color: @surface1;
 }
 
-.control-center .notification-group {
-  margin-top: 10px;
-}
-
-scrollbar slider {
-  margin: -3px;
-  opacity: 0.8;
-}
-
-scrollbar trough {
-  margin: 2px 0;
+/* widget  */
+.widget-title,
+.widget-dnd,
+.widget-volume,
+.widget-backlight {
+  margin-bottom: 1rem;
 }
 
 /* dnd */
-
 .widget-dnd {
-  margin: 8px 0 16px 0;
   border-radius: 0;
-  font-size: 1.1rem;
 }
 
 .widget-dnd > switch {
-  font-size: initial;
   border-radius: 0;
   background: @base;
   box-shadow: none;
@@ -239,12 +211,9 @@ scrollbar trough {
 }
 
 .mpris-overlay {
-  box-shadow: inset 0 0 0 1px @surface1;
   border-radius: 0;
-  /* background-color: @crust; */
-  background-color: alpha(@crust, 0.9);
-  /* opacity: 0.9; */
-  padding: 15px;
+  background-color: alpha(shade(@crust, 0.9), 0.8);
+  padding: 1rem;
 }
 
 .widget-mpris-album-art {
@@ -286,60 +255,30 @@ scrollbar trough {
   opacity: 0.5;
 }
 
-.widget-menubar > box > .menu-button-bar > button > label {
-  font-size: 3rem;
-  padding: 0.5rem 2rem;
-}
-
-.widget-menubar > box > .menu-button-bar > :last-child {
-  color: @red;
-}
-
-.power-buttons button:hover,
-.powermode-buttons button:hover,
-.screenshot-buttons button:hover {
-  background: @surface0;
-}
-
 .control-center .widget-label > label {
   color: @text;
-  font-size: 2rem;
-}
-
-.widget-buttons-grid {
-  padding-top: 1rem;
-}
-
-.widget-buttons-grid > flowbox > flowboxchild > button label {
-  font-size: 2.5rem;
 }
 
 .widget-volume {
-  padding: 1rem 0;
+  margin-bottom: 2rem;
 }
 
 .widget-volume label {
-  color: @sapphire;
-  padding: 0 1rem;
+  color: @blue;
+  font-size: 1.5rem;
 }
 
-.widget-volume trough highlight {
-  background: @sapphire;
-}
-
-.widget-backlight trough highlight {
-  background: @yellow;
+.widget-volume trough highlight,
+.widget-volume trough slider {
+  background: @blue;
 }
 
 .widget-backlight label {
-  font-size: 1.5rem;
   color: @yellow;
+  font-size: 1.5rem;
 }
 
-.widget-backlight .KB {
-  padding-bottom: 1rem;
-}
-
-.image {
-  padding-right: 0.5rem;
+.widget-backlight trough highlight,
+.widget-backlight trough slider {
+  background: @yellow;
 }

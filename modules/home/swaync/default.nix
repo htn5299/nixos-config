@@ -9,10 +9,10 @@
       positionY = "top";
       control-center-positionX = "none";
       control-center-positionY = "none";
-      control-center-margin-top = 4;
-      control-center-margin-bottom = 4;
-      control-center-margin-right = 4;
-      control-center-margin-left = 4;
+      control-center-margin-top = 0;
+      control-center-margin-bottom = 0;
+      control-center-margin-right = 0;
+      control-center-margin-left = 0;
       control-center-width = 400;
       control-center-height = -1;
       fit-to-screen = true;
@@ -42,17 +42,11 @@
         "title"
         "dnd"
         "mpris"
+        "backlight"
+        "volume"
         "notifications"
       ];
       widget-config = {
-        notifications = {
-          vexpand = false;
-        };
-        inhibitors = {
-          text = "Inhibitors";
-          clear-all-button = true;
-          button-text = "Clear All";
-        };
         title = {
           text = "Notifications";
           clear-all-button = true;
@@ -61,9 +55,13 @@
         dnd = {
           text = "Do Not Disturb";
         };
-        label = {
-          max-lines = 5;
-          text = "Label Text";
+        backlight = {
+          label = "";
+          device = "intel_backlight";
+          min = 10;
+        };
+        volume = {
+          label = "";
         };
         mpris = {
           autohide = true;
