@@ -76,9 +76,9 @@ scrollbar slider {
   background: var(--bg-primary);
 }
 
-.notification-row .notification-background {
-  margin: 0px -6px 0px 0px;
-}
+/* .notification-row .notification-background { */
+/*   margin: 0px -6px 0px 0px; */
+/* } */
 
 /* Base notification styles */
 .notification-row .notification-background .notification {
