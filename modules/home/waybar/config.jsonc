@@ -14,11 +14,12 @@
   ],
   "hyprland/workspaces": {
     "format": "{name}",
-    "all-outputs": false
+    "all-outputs": false,
+    "show-special": true
   },
   "hyprland/window": {
     "format": "{}",
-    "max-length": 70,
+    // "max-length": 70,
     "icon": false,
     "icon-size": 11,
     "swap-icon-label": false

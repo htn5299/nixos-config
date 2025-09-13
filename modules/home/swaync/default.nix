@@ -1,44 +1,80 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 {
   services.swaync = {
     enable = true;
     style = ./style.css;
     settings = {
       "$schema" = "/etc/xdg/swaync/configSchema.json";
+
+      # Display settings
+      ignore-gtk-theme = true;
       positionX = "right";
       positionY = "top";
-      control-center-positionX = "none";
-      control-center-positionY = "none";
-      control-center-margin-top = 0;
-      control-center-margin-bottom = 0;
-      control-center-margin-right = 0;
-      control-center-margin-left = 0;
-      control-center-width = 400;
-      control-center-height = -1;
-      fit-to-screen = true;
-      layer-shell-cover-screen = true;
-
-      layer-shell = true;
       layer = "overlay";
-      control-center-layer = "overlay";
+      control-center-layer = "top";
+      layer-shell = true;
+      layer-shell-cover-screen = true;
       cssPriority = "user";
 
-      notification-icon-size = 64;
+      # Margins
+      control-center-margin-top = 8;
+      control-center-margin-bottom = 8;
+      control-center-margin-right = 8;
+      control-center-margin-left = 0;
 
+      # Notification settings
+      notification-2fa-action = true;
+      notification-inline-replies = false;
       notification-body-image-height = 100;
       notification-body-image-width = 200;
-      notification-inline-replies = true;
+
+      # Timeouts
       timeout = 10;
       timeout-low = 5;
       timeout-critical = 0;
+
+      # Layout settings
+      fit-to-screen = true;
+      relative-timestamps = true;
+      control-center-width = 400;
+      control-center-height = 600;
       notification-window-width = 400;
+
+      # Behavior settings
       keyboard-shortcuts = true;
+      notification-grouping = true;
       image-visibility = "when-available";
       transition-time = 200;
       hide-on-clear = false;
       hide-on-action = true;
+      text-empty = "No Notifications";
       script-fail-notify = true;
+
+      # Scripts
+      scripts = {
+        example-script = {
+          exec = "echo 'Do something...'";
+          urgency = "Normal";
+        };
+        example-action-script = {
+          exec = "echo 'Do something actionable!'";
+          urgency = "Normal";
+          run-on = "action";
+        };
+      };
+
+      # # Notification visibility rules
+      # notification-visibility = {
+      #   example-name = {
+      #     state = "muted";
+      #     urgency = "Low";
+      #     app-name = "Spotify";
+      #   };
+      # };
+
+      # Widget configuration
       widgets = [
+        "inhibitors"
         "title"
         "dnd"
         "mpris"
@@ -46,7 +82,13 @@
         "volume"
         "notifications"
       ];
+
       widget-config = {
+        inhibitors = {
+          text = "Inhibitors";
+          button-text = "Clear All";
+          clear-all-button = true;
+        };
         title = {
           text = "Notifications";
           clear-all-button = true;
@@ -63,8 +105,25 @@
         volume = {
           label = "";
         };
+        label = {
+          max-lines = 5;
+          text = "Label Text";
+        };
         mpris = {
-          autohide = true;
+          show-album-art = "always";
+          loop-carousel = false;
+        };
+        buttons-grid = {
+          buttons-per-row = 7;
+          actions = [
+            {
+              label = "󰖩";
+              type = "toggle";
+              active = true;
+              command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'";
+              update-command = "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'";
+            }
+          ];
         };
       };
     };

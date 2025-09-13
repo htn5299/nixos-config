@@ -67,8 +67,8 @@
       "$mainMod, mouse_up, workspace, e-1"
 
       # Scratchpad
-      # "$mainMod,       S, togglespecialworkspace,  magic"
-      # "$mainMod ALT, S, movetoworkspace, special:magic"
+      "$mainMod, S, togglespecialworkspace,  magic"
+      "$mainMod ALT, S, movetoworkspace, special:magic"
     ];
 
     bindm = [

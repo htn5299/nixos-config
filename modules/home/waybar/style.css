@@ -4,7 +4,7 @@
   border: none;
   border-radius: 0;
   font-family: "Ubuntu Nerd Font", "JetBrainsMono Nerd Font";
-  font-size: 13px;
+  font-size: 12px;
   transition: 0s;
 }
 
@@ -24,8 +24,8 @@ tooltip label {
 
 #workspaces button {
   margin: 0;
-  padding: 0 6px;
-  margin-right: 3px;
+  padding: 1px 0.5rem;
+  margin-right: 0.2rem;
   background-color: transparent;
   color: @subtext1;
 }
@@ -44,15 +44,19 @@ tooltip label {
 #tray,
 #clock {
   margin: 0;
-  padding: 0 6px;
+  padding: 1px 0.5rem;
   background-color: transparent;
   color: @text;
 }
 
+#window {
+  margin: 0 2rem;
+}
+
 .modules-left > widget:first-child > #workspaces > button:first-child {
-  margin-left: 3px;
+  margin-left: 0.2rem;
 }
 
 .modules-right > widget:last-child > #clock {
-  margin-right: 3px;
+  margin-right: 0.4rem;
 }
