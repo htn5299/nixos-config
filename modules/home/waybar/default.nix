@@ -18,6 +18,7 @@
     @define-color subtext0 #${base03};
     @define-color subtext1 #${base04};
     @define-color text #${base05};
+    @define-color green #${base0B};
     @define-color blue #${base0D};
     @define-color sapphire #${base0C};
     @define-color yellow #${base0A};

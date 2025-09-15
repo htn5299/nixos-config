@@ -42,7 +42,8 @@ tooltip label {
 
 #window,
 #tray,
-#clock {
+#clock,
+#custom-pomodoro {
   margin: 0;
   padding: 1px 0.5rem;
   background-color: transparent;
@@ -58,5 +59,23 @@ tooltip label {
 }
 
 .modules-right > widget:last-child > #clock {
-  margin-right: 0.4rem;
+  margin-right: 0.2rem;
+}
+
+/* Pomodoro styling - text colors only */
+#custom-pomodoro.inactive {
+  color: @text;
+}
+
+#custom-pomodoro.pomodoro {
+  color: @red;
+}
+
+#custom-pomodoro.break {
+  color: @green;
+}
+
+#custom-pomodoro.paused {
+  color: @pink;
+  font-style: italic;
 }

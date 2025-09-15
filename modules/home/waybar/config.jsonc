@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "bottom",
+  "position": "top",
   "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces"
@@ -10,6 +10,7 @@
   ],
   "modules-right": [
     "tray",
+    "custom/pomodoro",
     "clock"
   ],
   "hyprland/workspaces": {
@@ -40,5 +41,14 @@
       }
     },
     "on-click": "swaync-client -t -sw"
+  },
+  "custom/pomodoro": {
+    "exec": "pomodoro_timer",
+    "return-type": "json",
+    "interval": 1,
+    "format": "{}",
+    "on-click": "pomodoro_timer toggle"
+    // "on-click-right": "pomodoro_timer skip",
+    // "on-click-middle": "pomodoro_timer reset"
   }
 }
