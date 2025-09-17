@@ -7,8 +7,8 @@ import argparse
 import subprocess
 
 # Constants
-POMODORO = 52 * 60  # 25 minutes in seconds
-BREAK = 17 * 60  # 5 minutes in seconds
+POMODORO = 13 * 60  # 25 minutes in seconds
+BREAK = 7 * 60  # 5 minutes in seconds
 
 # State file
 STATE_FILE = os.path.expanduser("~/.cache/pomodoro_state.json")
@@ -35,12 +35,12 @@ def load_state():
             # Auto-transition if timer completed
             if state["time_left"] <= 0:
                 if state["status"] == "pomodoro":
-                    notify("Pomodoro Complete!", "Time for a break")
+                    notify("Work session done!", "Time for a break")
                     state["pomodoros"] += 1
                     state["status"] = "break"
                     state["time_left"] = BREAK
                 else:
-                    notify("Break Complete!", "Time to focus")
+                    notify("Break session done!", "Time to focus")
                     state["status"] = "pomodoro"
                     state["time_left"] = POMODORO
                 toggle(state)
@@ -72,6 +72,7 @@ def format_time(seconds):
 def notify(title, message):
     try:
         subprocess.run(["notify-send", title, message])
+        subprocess.run(["spd-say", title])
     except:
         pass
 

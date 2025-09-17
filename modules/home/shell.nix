@@ -45,8 +45,8 @@
 
       # Productivity corner
       declare -A pomo_options
-      pomo_options["wk"]="52"
-      pomo_options["br"]="17"
+      pomo_options["work"]="52"
+      pomo_options["break"]="17"
 
       pomodoro () {
         if [ -n "$1" -a -n "''${pomo_options["$1"]}" ]; then
@@ -57,8 +57,8 @@
         fi
       }
 
-      alias work="pomodoro 'wk'"
-      alias br="pomodoro 'br'"
+      alias work="pomodoro 'work'"
+      alias break="pomodoro 'break'"
     '';
   };
 }
