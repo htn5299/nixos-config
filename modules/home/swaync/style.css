@@ -76,9 +76,9 @@ scrollbar slider {
   background: var(--bg-primary);
 }
 
-/* .notification-row .notification-background { */
-/*   margin: 0px -6px 0px 0px; */
-/* } */
+.notification-row .notification-background {
+  margin: 0px -6px 0px 0px;
+}
 
 /* Base notification styles */
 .notification-row .notification-background .notification {
@@ -246,7 +246,7 @@ scrollbar slider {
 
 .notification-group .notification-group-buttons,
 .notification-group .notification-group-headers {
-  margin: 0 16px;
+  margin: 0 12px;
   color: var(--text-primary);
 }
 
@@ -270,9 +270,9 @@ scrollbar slider {
   color: var(--text-primary);
 }
 
-.notification-group .notification-group-buttons {
-  margin: 5px;
-}
+/* .notification-group .notification-group-buttons { */
+/*   margin: 5px; */
+/* } */
 
 .notification-group.collapsed.not-expanded {
   opacity: 1;
@@ -327,6 +327,10 @@ scrollbar slider {
   .notification-default-action:hover,
 .control-center .control-center-list .notification .notification-action:hover {
   background-color: var(--bg-primary);
+}
+
+.control-center .notification-row .notification-background {
+  margin: 0px;
 }
 
 /* Floating notifications */
