@@ -40,7 +40,8 @@
         "today": "<span><b><u>{}</u></b></span>"
       }
     },
-    "on-click": "swaync-client -t -sw"
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
   },
   "custom/pomodoro": {
     "exec": "pomodoro_timer",

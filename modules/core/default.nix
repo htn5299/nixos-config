@@ -8,6 +8,7 @@
     ./dropbox.nix
     ./fcitx5.nix
     ./fonts.nix
+    ./hosts.nix
     ./hyprland.nix
     ./kanata.nix
     ./network.nix

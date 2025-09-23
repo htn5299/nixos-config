@@ -38,7 +38,7 @@
       screenshot-format = "png";
       screenshot-high-bit-depth = "yes";
       screenshot-png-compression = 3;
-      screenshot-directory = "$HOME/Pictures/Mpv";
+      screenshot-directory = "~/Pictures/Mpv";
       screenshot-template = "%F - [%P] (%#01n)";
       save-position-on-quit = "yes";
 

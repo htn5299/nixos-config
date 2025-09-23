@@ -7,7 +7,7 @@ import argparse
 import subprocess
 
 # Constants
-POMODORO = 13 * 60  # 25 minutes in seconds
+POMODORO = 21 * 60  # 25 minutes in seconds
 BREAK = 7 * 60  # 5 minutes in seconds
 
 # State file
@@ -85,16 +85,16 @@ def output_for_waybar(state):
     tooltip = ""
 
     if status == "inactive":
-        text = "󰔟 Start"
+        text = f"{format_time(POMODORO)}"
         tooltip = "Click to start a pomodoro"
     elif status == "pomodoro":
-        text = f"󰔛 {format_time(state['time_left'])}"
+        text = f"{format_time(state['time_left'])}"
         tooltip = f"Focus time - Pomodoros: {pomodoros}"
     elif status == "break":
-        text = f"󰭹 {format_time(state['time_left'])}"
+        text = f"{format_time(state['time_left'])}"
         tooltip = f"Break - Pomodoros: {pomodoros}"
     elif status == "paused":
-        text = f"󰏤 {format_time(state['time_left'])}"
+        text = f"{format_time(state['time_left'])}"
         tooltip = f"Paused - Pomodoros: {pomodoros}"
         if paused_state == "break":
             tooltip = f"Paused Break - Pomodoros: {pomodoros}"
