@@ -54,8 +54,8 @@ scrollbar slider {
   /* text-shadow: none; */
   /* padding: 0; */
   /* border-radius: 50%; */
-  /* margin-top: 8px; */
-  /* margin-right: 8px; */
+  /* margin-top: 4px; */
+  /* margin-right: 4px; */
   /* min-width: 20px; */
   /* min-height: 20px; */
   background: transparent;
@@ -86,7 +86,7 @@ scrollbar slider {
   border: 1px solid var(--border-color);
   transition: background var(--transition-standard);
   background: var(--bg-primary);
-  padding: 4px 8px;
+  padding: 4px;
 }
 
 /* Priority-based notification styles */
@@ -104,7 +104,7 @@ scrollbar slider {
 
 /* Notification default action */
 .notification-default-action {
-  padding: 8px;
+  padding: 4px;
   margin: 0;
   box-shadow: none;
   background: transparent;
@@ -135,7 +135,7 @@ scrollbar slider {
   -gtk-icon-filter: none;
   -gtk-icon-size: 3rem;
   border-radius: 50px;
-  margin: 0px 14px 0px 0px;
+  margin: 0px 8px 0px 0px;
 }
 
 .notification-content .app-icon {
@@ -218,9 +218,9 @@ scrollbar slider {
 /* Alternative actions */
 .notification-alt-actions {
   background: none;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  padding: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 4px;
 }
 
 .notification-action {
@@ -241,12 +241,12 @@ scrollbar slider {
 }
 
 /* .notification-group .notification-group-close-button .close-button { */
-/*   margin: 12px 20px; */
+/*   margin: 8px 20px; */
 /* } */
 
 .notification-group .notification-group-buttons,
 .notification-group .notification-group-headers {
-  margin: 0 12px;
+  margin: 0 8px;
   color: var(--text-primary);
 }
 
@@ -261,7 +261,7 @@ scrollbar slider {
   -gtk-icon-size: 2rem;
   font-size: 1.1rem;
   font-weight: 700;
-  margin: 5px 5px 5px 0px;
+  margin: 4px 4px 4px 0px;
 }
 
 .notification-group .notification-group-headers .notification-group-header {
@@ -271,7 +271,7 @@ scrollbar slider {
 }
 
 /* .notification-group .notification-group-buttons { */
-/*   margin: 5px; */
+/*   margin: 4px; */
 /* } */
 
 .notification-group.collapsed.not-expanded {
@@ -345,17 +345,17 @@ scrollbar slider {
 
 /* Widgets */
 .widget-title > label {
-  margin: 8px;
+  margin: 4px;
   font-weight: 700;
   font-size: 1.1rem;
 }
 
 .widget-title > button {
-  margin: 8px;
+  margin: 4px;
   font-size: 1rem;
   background: var(--bg-primary);
   border: 1px solid var(--text-disabled);
-  padding: 3px 10px;
+  padding: 2px 8px;
   color: var(--text-primary);
   font-weight: 700;
 }
@@ -367,7 +367,7 @@ scrollbar slider {
 .widget-volume,
 .widget-slider,
 .widget-backlight {
-  margin: 8px;
+  margin: 4px;
 }
 
 .widget-dnd label,
@@ -377,11 +377,11 @@ scrollbar slider {
 }
 
 .widget-dnd label {
-  margin: 8px;
+  margin: 4px;
 }
 
 .widget-dnd switch {
-  margin: 8px;
+  margin: 4px;
 }
 
 .widget-dnd switch slider {
@@ -389,16 +389,16 @@ scrollbar slider {
 }
 
 .widget-label {
-  margin: 8px;
+  margin: 4px;
 }
 
 /* Mpris widget */
 .widget-mpris {
-  margin: 5px;
+  margin: 4px;
 }
 
 .widget-mpris .widget-mpris-player {
-  margin: 10px 10px;
+  margin: 4px 4px;
   border-radius: 0px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--border-color);
@@ -451,8 +451,8 @@ scrollbar slider {
 
 /* Buttons widget */
 .widget-buttons-grid {
-  padding: 8px;
-  margin: 8px;
+  padding: 4px;
+  margin: 4px;
   border-radius: 0px;
 }
 
@@ -462,11 +462,11 @@ scrollbar slider {
 
 /* Menubar widget */
 .widget-menubar > .menu-button-bar > .start {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 .widget-menubar > .menu-button-bar > .end {
-  margin-right: 8px;
+  margin-right: 4px;
 }
 
 .widget-menubar > .menu-button-bar > .widget-menubar-container button {
@@ -474,17 +474,17 @@ scrollbar slider {
 }
 
 .widget-menubar > revealer {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .widget-menubar > revealer button {
-  margin: 8px;
+  margin: 4px;
   margin-top: 0;
 }
 
 /* Volume widget */
 .widget-volume {
-  padding: 8px;
+  padding: 4px;
   margin-bottom: 24px;
   border-radius: 0px;
 }
@@ -495,14 +495,14 @@ scrollbar slider {
 
 .per-app-volume {
   background-color: var(--bg-secondary);
-  padding: 4px 8px 8px 8px;
-  margin: 0px 8px 8px 8px;
+  padding: 4px;
+  margin: 0px 4px 4px 4px;
   border-radius: 0px;
 }
 
 /* Slider widget */
 .widget-slider {
-  padding: 8px;
+  padding: 4px;
   border-radius: 0px;
 }
 
@@ -512,16 +512,16 @@ scrollbar slider {
 
 /* Backlight widget */
 .widget-backlight {
-  padding: 8px;
+  padding: 4px;
   border-radius: 0px;
 }
 
 /* Inhibitors widget */
 .widget-inhibitors > label {
-  margin: 8px;
+  margin: 4px;
   font-size: 1rem;
 }
 
 .widget-inhibitors > button {
-  margin: 8px;
+  margin: 4px;
 }
