@@ -37,22 +37,25 @@
     let
       username = "htn";
       homeStateVersion = "24.11";
-      hostname = "pavilion";
-    in
-    {
-      nixosConfigurations = {
-        "${hostname}" = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+      system = "x86_64-linux";
+      hosts = [
+        "pavilion"
+        "thinkpad"
+      ];
+
+      mkHost =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
           specialArgs = { inherit inputs hostname username; };
-          modules = [
-            ./hosts/${hostname}/configuration.nix
-          ];
+          modules = [ ./hosts/${hostname}/configuration.nix ];
         };
-      };
-      homeConfigurations = {
-        "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
+
+      mkHome =
+        hostname:
+        home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
-            system = "x86_64-linux";
+            inherit system;
             config.allowUnfree = true;
           };
           extraSpecialArgs = {
@@ -63,10 +66,15 @@
               homeStateVersion
               ;
           };
-          modules = [
-            ./hosts/${hostname}/home-manager.nix
-          ];
+          modules = [ ./hosts/${hostname}/home-manager.nix ];
         };
-      };
+    in
+    {
+      nixosConfigurations = nixpkgs.lib.genAttrs hosts mkHost;
+      homeConfigurations =
+        nixpkgs.lib.genAttrs hosts (hostname: mkHome hostname)
+        // nixpkgs.lib.mapAttrs' (h: v: nixpkgs.lib.nameValuePair "${username}@${h}" v) (
+          nixpkgs.lib.genAttrs hosts mkHome
+        );
     };
 }

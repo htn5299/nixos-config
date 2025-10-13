@@ -1,4 +1,3 @@
-{ hostname, username, ... }:
 {
   programs.fzf = {
     enable = true;
@@ -27,13 +26,6 @@
       ll = "eza -l --git";
       lla = "eza -lA";
       tree = "eza --icons --tree --group-directories-first";
-
-      # NixOS
-      nix-switch = "sudo nixos-rebuild switch --flake ~/nixos-config/#${hostname}";
-      home-switch = "nix run home-manager --no-write-lock-file -- switch --flake ~/nixos-config#${username}@${hostname}";
-      nix-switch-upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#${hostname}";
-      nix-flake-update = "nix flake update --flake ~/nixos-config#";
-      nix-clean = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations && nix-collect-garbage -d && sudo nix-collect-garbage --delete-older-than 2d";
     };
 
     initContent = ''

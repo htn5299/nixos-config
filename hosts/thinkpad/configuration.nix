@@ -12,7 +12,7 @@
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/kanata.nix
     ../../modules/nixos/network.nix
-    ../../modules/nixos/nvidia.nix
+    # ../../modules/nixos/nvidia.nix
     ../../modules/nixos/pipewire.nix
     ../../modules/nixos/postgresql.nix
     ../../modules/nixos/programs.nix

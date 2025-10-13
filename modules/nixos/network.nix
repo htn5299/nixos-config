@@ -1,8 +1,8 @@
 # networking configuration
-{ pkgs, ... }:
+{ pkgs, hostname, ... }:
 {
   networking = {
-    hostName = "nixos";
+    hostName = hostname;
     networkmanager.enable = true;
     firewall = {
       enable = true;

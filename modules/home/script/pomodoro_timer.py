@@ -7,7 +7,7 @@ import argparse
 import subprocess
 
 # Constants
-POMODORO = 21 * 60  # 25 minutes in seconds
+POMODORO = 25 * 60  # 25 minutes in seconds
 BREAK = 7 * 60  # 5 minutes in seconds
 
 # State file
