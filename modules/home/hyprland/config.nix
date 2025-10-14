@@ -34,6 +34,7 @@
       ];
       exec-once = [
         # "waybar"
+        "hyprctl dispatch workspace 2"
         "waypaper --restore"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"

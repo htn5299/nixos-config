@@ -3,7 +3,10 @@
   "position": "top",
   "reload_style_on_change": true,
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "battery",
+    "cpu",
+    "memory"
   ],
   "modules-center": [
     "hyprland/window"
@@ -23,7 +26,8 @@
     // "max-length": 70,
     "icon": false,
     "icon-size": 11,
-    "swap-icon-label": false
+    "swap-icon-label": false,
+    "tooltip": false
   },
   "tray": {
     "icon-size": 12,
@@ -42,6 +46,33 @@
     },
     "on-click": "swaync-client -t -sw",
     "on-click-right": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% ",
+    "format-icons": [
+      "󰁻",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "memory": {
+    "format": "{used:0.1f}G/{total:0.1f}G ",
+    "tooltip": true,
+    "tooltip-format": "Memory usage: {used:0.2f}G/{total:0.2f}G"
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true
   },
   "custom/pomodoro": {
     "exec": "pomodoro_timer",

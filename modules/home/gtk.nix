@@ -11,8 +11,8 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.nordic;
-      name = "Nordic-darker";
+      package = pkgs.gnome-themes-extra;
+      name = "Adwaita-dark";
     };
     iconTheme = {
       package = pkgs.papirus-icon-theme;
