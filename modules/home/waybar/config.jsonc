@@ -3,16 +3,16 @@
   "position": "top",
   "reload_style_on_change": true,
   "modules-left": [
-    "hyprland/workspaces",
-    "battery",
-    "cpu",
-    "memory"
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "hyprland/window"
   ],
   "modules-right": [
+    // "memory",
+    // "cpu",
     "tray",
+    "battery",
     "custom/pomodoro",
     "clock"
   ],
@@ -48,10 +48,10 @@
     "on-click-right": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
   },
   "battery": {
+    "interval": 5,
     "states": {
-      "good": 95,
       "warning": 30,
-      "critical": 20
+      "critical": 15
     },
     "format": "{capacity}% {icon}",
     "format-charging": "{capacity}% 󰂄",

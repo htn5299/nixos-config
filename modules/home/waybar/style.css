@@ -62,12 +62,25 @@ tooltip label {
   margin-left: 0.2rem;
 }
 
-.modules-left > widget:first-child > #workspaces > button:last-child {
-  margin-right: 0.5rem;
-}
-
 .modules-right > widget:last-child > #clock {
   margin-right: 0.2rem;
+}
+
+/* Battery */
+#battery {
+  color: @text;
+}
+
+#battery.charging {
+  color: @text;
+}
+
+#battery.warning:not(.charging) {
+  color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
 }
 
 /* Pomodoro styling - text colors only */

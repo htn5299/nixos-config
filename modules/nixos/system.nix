@@ -57,6 +57,8 @@
     vim
     nodejs
     gcc
+    woeusb-ng
+    ntfs3g
   ];
 
   nix = {
