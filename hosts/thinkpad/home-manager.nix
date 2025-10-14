@@ -19,7 +19,6 @@
     ../../modules/home/swaync
     ../../modules/home/waybar
     ../../modules/home/cli.nix
-    ../../modules/home/dropbox.nix
     ../../modules/home/ghostty.nix
     ../../modules/home/git.nix
     ../../modules/home/gtk.nix

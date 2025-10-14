@@ -20,5 +20,6 @@
     spotify
     youtube-music
     obs-studio
+    maestral-gui
   ];
 }

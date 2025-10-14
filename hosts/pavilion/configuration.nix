@@ -5,7 +5,6 @@
     ../../modules/nixos/bootloader.nix
     ../../modules/nixos/display-manager.nix
     ../../modules/nixos/docker.nix
-    # ../../modules/nixos/dropbox.nix
     ../../modules/nixos/fcitx5.nix
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/hosts.nix

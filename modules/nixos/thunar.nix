@@ -5,7 +5,6 @@
 
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin
-    thunar-dropbox-plugin
     thunar-volman
   ];
 
