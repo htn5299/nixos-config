@@ -100,6 +100,9 @@
         follow_mouse = 1;
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
+      cursor = {
+        no_hardware_cursors = true;
+      };
       general = with config.colorScheme.palette; {
         gaps_in = 0;
         gaps_out = 0;

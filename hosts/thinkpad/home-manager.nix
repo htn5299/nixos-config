@@ -40,8 +40,8 @@
   wayland.windowManager.hyprland.settings = {
     monitor = [
       # ",preferred,auto,1"
-      "eDP-1,1920x1200, 0x0, 1.2"
-      "HDMI-A-1, 1920x1080, -1920x-100, 1.0"
+      "HDMI-A-1, 1920x1080, 0x0, 1.0"
+      "eDP-1,1920x1200, 1920x0, 1.2"
       # "eDP-1,disable"
     ];
 
