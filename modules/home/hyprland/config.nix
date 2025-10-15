@@ -56,9 +56,9 @@
         # "rounding 0, floating:0, onworkspace:f[1]s[false]"
 
         # "move 100%-w-40 40,title:^(Bluetooth Devices)$"
-        "float,title:^(Volume Control)$"
-        "size 1200 800,title:^(Volume Control)$"
-        "move 100%-w-20 40,title:^(Volume Control)$"
+        # "float,title:^(Volume Control)$"
+        # "size 1200 800,title:^(Volume Control)$"
+        # "move 100%-w-20 40,title:^(Volume Control)$"
 
         "float,title:^(Bluetooth Devices)$"
         "size 1200 600,title:^(Bluetooth Devices)$"

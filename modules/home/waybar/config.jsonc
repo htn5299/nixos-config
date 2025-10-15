@@ -48,22 +48,30 @@
     "on-click-right": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
   },
   "battery": {
-    "interval": 5,
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰂄",
-    "format-plugged": "{capacity}% ",
+    "format": " {icon} {capacity}% ",
+    "format-charging": " 󱐋{capacity}%",
+    "interval": 2,
     "format-icons": [
+      "󰂎",
       "󰁻",
       "󰁼",
+      "󰁽",
       "󰁾",
+      "󰁿",
       "󰂀",
+      "󰂁",
       "󰂂",
       "󰁹"
-    ]
+    ],
+    "events": {
+      "on-discharging-warning": "notify-send 'Battery Low' -i 'battery-030'",
+      "on-discharging-critical": "notify-send 'Battery Critical' -u critical -i 'battery-015'",
+      "on-charging-100": "notify-send 'Battery Full' -i 'battery-100-charged'"
+    }
   },
   "memory": {
     "format": "{used:0.1f}G ",
