@@ -17,9 +17,9 @@
       cssPriority = "user";
 
       # Margins
-      control-center-margin-top = 4;
-      control-center-margin-bottom = 4;
-      control-center-margin-right = 4;
+      control-center-margin-top = 0;
+      control-center-margin-bottom = 0;
+      control-center-margin-right = 0;
       control-center-margin-left = 0;
 
       # Notification settings

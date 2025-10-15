@@ -45,27 +45,27 @@
       ];
       workspace = [
         # smart gap
-        "w[tv1]s[false], gapsout:0, gapsin:0"
-        "f[1]s[false], gapsout:0, gapsin:0:"
+        # "w[tv1]s[false], gapsout:0, gapsin:0"
+        # "f[1]s[false], gapsout:0, gapsin:0:"
       ];
       windowrule = [
         # smart gap
-        "bordersize 0, floating:0, onworkspace:w[tv1]s[false]"
-        "rounding 0, floating:0, onworkspace:w[tv1]s[false]"
-        "bordersize 0, floating:0, onworkspace:f[1]s[false]"
-        "rounding 0, floating:0, onworkspace:f[1]s[false]"
+        # "bordersize 0, floating:0, onworkspace:w[tv1]s[false]"
+        # "rounding 0, floating:0, onworkspace:w[tv1]s[false]"
+        # "bordersize 0, floating:0, onworkspace:f[1]s[false]"
+        # "rounding 0, floating:0, onworkspace:f[1]s[false]"
 
         # "move 100%-w-40 40,title:^(Bluetooth Devices)$"
         "float,title:^(Volume Control)$"
-        "size 700 700,title:^(Volume Control)$"
+        "size 1200 800,title:^(Volume Control)$"
         "move 100%-w-20 40,title:^(Volume Control)$"
 
         "float,title:^(Bluetooth Devices)$"
-        "size 600 600,title:^(Bluetooth Devices)$"
+        "size 1200 600,title:^(Bluetooth Devices)$"
         "move 100%-w-20 40,title:^(Bluetooth Devices)$"
 
         "float,title:^(Waypaper)$"
-        "size 800 800,title:^(Waypaper)$"
+        "size 1200 800,title:^(Waypaper)$"
         "move 100%-w-20 40,title:^(Waypaper)$"
       ];
       windowrulev2 = [
@@ -104,8 +104,8 @@
         no_hardware_cursors = true;
       };
       general = with config.colorScheme.palette; {
-        gaps_in = 0;
-        gaps_out = 0;
+        gaps_in = 4;
+        gaps_out = 8;
 
         border_size = 1;
 

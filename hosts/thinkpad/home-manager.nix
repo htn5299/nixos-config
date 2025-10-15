@@ -40,7 +40,7 @@
     monitor = [
       # ",preferred,auto,1"
       "HDMI-A-1, 1920x1080, 0x0, 1.0"
-      "eDP-1,1920x1200, 1920x0, 1.2"
+      "eDP-1,1920x1200, 1920x100, 1.25"
       # "eDP-1,disable"
     ];
 

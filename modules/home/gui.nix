@@ -8,7 +8,7 @@
     discord
     qbittorrent
     calibre
-    bitwarden-desktop
+    # bitwarden-desktop
     figma-linux
     onlyoffice-bin
     krita

@@ -11,9 +11,9 @@
   "modules-right": [
     // "memory",
     // "cpu",
+    "custom/pomodoro",
     "tray",
     "battery",
-    "custom/pomodoro",
     "clock"
   ],
   "hyprland/workspaces": {
