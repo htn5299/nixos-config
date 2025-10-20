@@ -8,7 +8,8 @@ import subprocess
 
 # Constants
 POMODORO = 25 * 60  # 25 minutes in seconds
-BREAK = 7 * 60  # 5 minutes in seconds
+SHORT_BREAK = 5 * 60  # 5 minutes in seconds
+LONG_BREAK = 15 * 60  # 15 minutes in seconds
 
 # State file
 STATE_FILE = os.path.expanduser("~/.cache/pomodoro_state.json")
@@ -35,15 +36,18 @@ def load_state():
             # Auto-transition if timer completed
             if state["time_left"] <= 0:
                 if state["status"] == "pomodoro":
-                    notify("Work session done!", "Time for a break")
+                    notify("Pomodoro Complete!", "Time for a break")
                     state["pomodoros"] += 1
-                    state["status"] = "break"
-                    state["time_left"] = BREAK
+                    if state["pomodoros"] % 4 == 0:
+                        state["status"] = "long_break"
+                        state["time_left"] = LONG_BREAK
+                    else:
+                        state["status"] = "short_break"
+                        state["time_left"] = SHORT_BREAK
                 else:
-                    notify("Break session done!", "Time to focus")
+                    notify("Break Complete!", "Time to focus")
                     state["status"] = "pomodoro"
                     state["time_left"] = POMODORO
-                toggle(state)
 
         state["last_update"] = int(time.time())
         save_state(state)
@@ -72,7 +76,6 @@ def format_time(seconds):
 def notify(title, message):
     try:
         subprocess.run(["notify-send", title, message])
-        subprocess.run(["spd-say", title])
     except:
         pass
 
@@ -80,26 +83,24 @@ def notify(title, message):
 def output_for_waybar(state):
     status = state["status"]
     pomodoros = state["pomodoros"]
-    paused_state = state.get("paused_state", "pomodoro")
-    text = ""
-    tooltip = ""
 
     if status == "inactive":
-        text = f"{format_time(POMODORO)}"
+        text = "󰔟 Start"
         tooltip = "Click to start a pomodoro"
     elif status == "pomodoro":
-        text = f"{format_time(state['time_left'])}"
+        text = f"󰔛 {format_time(state['time_left'])}"
         tooltip = f"Focus time - Pomodoros: {pomodoros}"
-    elif status == "break":
-        text = f"{format_time(state['time_left'])}"
-        tooltip = f"Break - Pomodoros: {pomodoros}"
+    elif status == "short_break":
+        text = f"󰭹 {format_time(state['time_left'])}"
+        tooltip = f"Short break - Pomodoros: {pomodoros}"
+    elif status == "long_break":
+        text = f"󰭹 {format_time(state['time_left'])}"
+        tooltip = f"Long break - Pomodoros: {pomodoros}"
     elif status == "paused":
-        text = f"{format_time(state['time_left'])}"
+        text = f"󰏤 {format_time(state['time_left'])}"
         tooltip = f"Paused - Pomodoros: {pomodoros}"
-        if paused_state == "break":
-            tooltip = f"Paused Break - Pomodoros: {pomodoros}"
 
-    # tooltip += "\nClick: Toggle | Right-click: Skip | Middle-click: Reset"
+    tooltip += "\nClick: Toggle | Right-click: Skip | Middle-click: Reset"
 
     return json.dumps({"text": text, "tooltip": tooltip, "class": status})
 
@@ -125,8 +126,12 @@ def skip(state):
         and state.get("paused_state") == "pomodoro"
     ):
         state["pomodoros"] += 1
-        state["status"] = "break"
-        state["time_left"] = BREAK
+        if state["pomodoros"] % 4 == 0:
+            state["status"] = "long_break"
+            state["time_left"] = LONG_BREAK
+        else:
+            state["status"] = "short_break"
+            state["time_left"] = SHORT_BREAK
     else:
         state["status"] = "pomodoro"
         state["time_left"] = POMODORO

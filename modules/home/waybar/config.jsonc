@@ -49,12 +49,11 @@
   },
   "battery": {
     "states": {
-      "warning": 30,
-      "critical": 15
+      "warning": 20,
+      "critical": 10
     },
     "format": " {icon} {capacity}% ",
     "format-charging": " 󱐋{capacity}%",
-    "interval": 2,
     "format-icons": [
       "󰂎",
       "󰁻",
@@ -67,11 +66,7 @@
       "󰂂",
       "󰁹"
     ],
-    "events": {
-      "on-discharging-warning": "notify-send 'Battery Low' -i 'battery-030'",
-      "on-discharging-critical": "notify-send 'Battery Critical' -u critical -i 'battery-015'",
-      "on-charging-100": "notify-send 'Battery Full' -i 'battery-100-charged'"
-    }
+    "on-click": "system-notify"
   },
   "memory": {
     "format": "{used:0.1f}G ",
@@ -83,12 +78,12 @@
     "tooltip": true
   },
   "custom/pomodoro": {
-    "exec": "pomodoro_timer",
+    "exec": "pomodoro-timer",
     "return-type": "json",
     "interval": 1,
     "format": "{}",
-    "on-click": "pomodoro_timer toggle"
-    // "on-click-right": "pomodoro_timer skip",
-    // "on-click-middle": "pomodoro_timer reset"
+    "on-click": "pomodoro-timer toggle",
+    "on-click-right": "pomodoro-timer skip",
+    "on-click-middle": "pomodoro-timer reset"
   }
 }

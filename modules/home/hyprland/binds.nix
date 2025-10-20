@@ -3,8 +3,6 @@
     "$terminal" = "ghostty";
     "$fileManager" = "thunar";
     "$mainMod" = "SUPER";
-    "$systemResources" =
-      ''notify-send "System Resources" "CPU: $(vmstat 1 2 | tail -1 | awk '{print 100-$15}')%\nRAM: $(free -h | awk '/^Mem:/ {print $3 " / " $2 " (" int($3/$2 * 100) "%)"}')" -t 5000 -i computer'';
 
     bind = [
       "$mainMod, Q, killactive,"
@@ -12,7 +10,6 @@
       "$mainMod, F, exec, rofi -show drun -show-icons"
       "$mainMod, RETURN, exec, $terminal"
       "$mainMod, O, exec, $fileManager"
-      "$mainMod, M, exec, $systemResources"
       "$mainMod ALT, F, togglefloating,"
       "$mainMod ALT, W, togglesplit,"
 
@@ -20,7 +17,7 @@
       "$mainMod ALT, I, exec, hyprpicker -an"
       # "$mainMod ALT, B, exec, pkill waybar || waybar &"
       "$mainMod, R, exec, swaync-client -t"
-      "$mainMod ALT, M, exec, rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
+      "$mainMod ALT, L, exec, rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
       ", Print, exec, grimblast --notify --freeze copysave area"
 
       # Move focus with mainMod + arrow keys

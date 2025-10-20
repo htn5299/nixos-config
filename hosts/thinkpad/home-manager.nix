@@ -27,6 +27,7 @@
     ../../modules/home/kitty.nix
     ../../modules/home/mpv.nix
     ../../modules/home/nix-colors.nix
+    ../../modules/home/poweralertd.nix
     ../../modules/home/qt.nix
     ../../modules/home/shell.nix
     ../../modules/home/swww.nix

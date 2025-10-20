@@ -11,9 +11,9 @@
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/kanata.nix
     ../../modules/nixos/network.nix
-    # ../../modules/nixos/nvidia.nix
     ../../modules/nixos/pipewire.nix
     ../../modules/nixos/postgresql.nix
+    ../../modules/nixos/power_management.nix
     ../../modules/nixos/programs.nix
     ../../modules/nixos/security.nix
     ../../modules/nixos/services.nix
