@@ -125,7 +125,7 @@
           passes = 2;
         };
         shadow = {
-          enabled = false;
+          enabled = true;
         };
       };
       layerrule = [
