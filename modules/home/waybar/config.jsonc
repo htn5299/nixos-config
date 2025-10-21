@@ -9,8 +9,6 @@
     "hyprland/window"
   ],
   "modules-right": [
-    // "memory",
-    // "cpu",
     "custom/pomodoro",
     "tray",
     "battery",
@@ -23,7 +21,6 @@
   },
   "hyprland/window": {
     "format": "{}",
-    // "max-length": 70,
     "icon": false,
     "icon-size": 11,
     "swap-icon-label": false,
@@ -52,38 +49,16 @@
       "warning": 20,
       "critical": 10
     },
-    "format": " {icon} {capacity}% ",
-    "format-charging": " 󱐋{capacity}%",
-    "format-icons": [
-      "󰂎",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
-    ],
+    "format": "{capacity}%",
+    "format-charging": "{capacity}%󱐋",
     "on-click": "system-notify"
-  },
-  "memory": {
-    "format": "{used:0.1f}G ",
-    "tooltip": true,
-    "tooltip-format": "Memory usage: {used:0.2f}G/{total:0.2f}G"
-  },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": true
   },
   "custom/pomodoro": {
     "exec": "pomodoro-timer",
+    "exec-if": "which pomodoro-timer",
     "return-type": "json",
     "interval": 1,
     "format": "{}",
-    "on-click": "pomodoro-timer toggle",
-    "on-click-right": "pomodoro-timer skip",
-    "on-click-middle": "pomodoro-timer reset"
+    "on-click": "pomodoro-timer toggle"
   }
 }

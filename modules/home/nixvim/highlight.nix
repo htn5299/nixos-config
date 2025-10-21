@@ -13,6 +13,10 @@
       link = "FloatBorder";
     };
 
+    AvanteSidebarWinSeparator = {
+      link = "FloatBorder";
+    };
+
     Pmenu = {
       fg = "#${base05}";
     };

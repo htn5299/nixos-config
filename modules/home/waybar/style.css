@@ -55,7 +55,7 @@ tooltip label {
 }
 
 .modules-left > widget:first-child > #workspaces > button:first-child {
-  margin-left: 4px;
+  margin-left: 0;
 }
 
 .modules-right > widget:last-child > #clock {
@@ -81,22 +81,18 @@ tooltip label {
 
 /* Pomodora timer */
 #custom-pomodoro.inactive {
-  color: #969696;
+  color: @text;
 }
 
 #custom-pomodoro.pomodoro {
-  color: #ff6b6b;
+  color: @red;
 }
 
 #custom-pomodoro.short_break {
-  color: #7eca9c;
-}
-
-#custom-pomodoro.long_break {
-  color: #89b4fa;
+  color: @green;
 }
 
 #custom-pomodoro.paused {
-  color: #f5c2e7;
+  color: @yellow;
   font-style: italic;
 }

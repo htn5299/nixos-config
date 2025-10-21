@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    # ./avante.nix
     ./base16.nix
     ./blink.nix
     ./conform.nix
