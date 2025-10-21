@@ -5,6 +5,7 @@
     ./binds.nix
     ./hyprlock.nix
     ./hypridle.nix
+    ./kanshi.nix
 
     inputs.hyprland.homeManagerModules.default
   ];
