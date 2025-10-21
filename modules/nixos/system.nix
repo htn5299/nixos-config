@@ -59,6 +59,10 @@
     gcc
     woeusb-ng
     ntfs3g
+    ventoy-full
+  ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.05"
   ];
 
   nix = {
