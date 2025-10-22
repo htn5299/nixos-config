@@ -9,6 +9,8 @@
     "hyprland/window"
   ],
   "modules-right": [
+    "memory",
+    "cpu",
     "custom/pomodoro",
     "tray",
     "battery",
@@ -41,8 +43,8 @@
         "today": "<span><b><u>{}</u></b></span>"
       }
     },
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
+    "on-click": "swaync-client -t -sw"
+    // "on-click-right": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
   },
   "battery": {
     "states": {
@@ -51,7 +53,18 @@
     },
     "format": "{capacity}%",
     "format-charging": "{capacity}%󱐋",
-    "on-click": "system-notify"
+    "on-click": "rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
+    // "on-click": "system-notify"
+  },
+  "cpu": {
+    "format": "{usage}%",
+    "tooltip": true,
+    "tooltip-format": "Cpu: {usage}%\nNúcleos: {cores}"
+  },
+  "memory": {
+    "format": "{}%",
+    "tooltip": true,
+    "tooltip-format": "Ram: {used}/{total} ({percentage}%)"
   },
   "custom/pomodoro": {
     "exec": "pomodoro-timer",
