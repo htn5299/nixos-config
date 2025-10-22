@@ -36,7 +36,7 @@
 
       gtk-titlebar = false;
       gtk-single-instance = false;
-      gtk-tabs-location = "bottom";
+      gtk-tabs-location = "top";
       gtk-wide-tabs = false;
 
       auto-update = "off";
