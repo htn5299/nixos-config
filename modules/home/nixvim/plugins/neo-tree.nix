@@ -21,7 +21,7 @@
     {
       mode = "n";
       key = "<leader>e";
-      action = "<cmd>Neotree reveal left<CR>";
+      action = "<cmd>Neotree float reveal toggle<CR>";
       options = {
         desc = "Neotree";
       };
