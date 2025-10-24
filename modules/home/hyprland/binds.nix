@@ -10,14 +10,14 @@
       "$mainMod, F, exec, rofi -show drun -show-icons"
       "$mainMod, RETURN, exec, $terminal"
       "$mainMod, O, exec, $fileManager"
-      "$mainMod SHIFT, F, togglefloating,"
-      "$mainMod SHIFT, W, togglesplit,"
+      "$mainMod ALT, F, togglefloating,"
+      "$mainMod ALT, W, togglesplit,"
 
       "$mainMod, V, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
-      "$mainMod SHIFT, I, exec, hyprpicker -an"
-      # "$mainMod SHIFT, B, exec, pkill waybar || waybar &"
+      "$mainMod ALT, I, exec, hyprpicker -an"
+      # "$mainMod ALT, B, exec, pkill waybar || waybar &"
       "$mainMod, R, exec, swaync-client -t"
-      "$mainMod SHIFT, L, exec, rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
+      "$mainMod ALT, L, exec, rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
       ", Print, exec, grimblast --notify --freeze copysave area"
 
       # Move focus with mainMod + arrow keys
@@ -27,10 +27,10 @@
       "$mainMod, J, movefocus, d"
 
       # Moving windows
-      "$mainMod SHIFT, H,  swapwindow, l"
-      "$mainMod SHIFT, L, swapwindow, r"
-      "$mainMod SHIFT, K,    swapwindow, u"
-      "$mainMod SHIFT, J,  swapwindow, d"
+      "$mainMod ALT, H,  swapwindow, l"
+      "$mainMod ALT, L, swapwindow, r"
+      "$mainMod ALT, K,    swapwindow, u"
+      "$mainMod ALT, J,  swapwindow, d"
 
       # Resizeing windows                   X  Y
       "$mainMod CTRL, H,  resizeactive, -60 0"
@@ -50,17 +50,17 @@
       "$mainMod, 9, workspace, 9"
       "$mainMod, 0, workspace, 10"
 
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      "$mainMod SHIFT, 1, movetoworkspace, 1"
-      "$mainMod SHIFT, 2, movetoworkspace, 2"
-      "$mainMod SHIFT, 3, movetoworkspace, 3"
-      "$mainMod SHIFT, 4, movetoworkspace, 4"
-      "$mainMod SHIFT, 5, movetoworkspace, 5"
-      "$mainMod SHIFT, 6, movetoworkspace, 6"
-      "$mainMod SHIFT, 7, movetoworkspace, 7"
-      "$mainMod SHIFT, 8, movetoworkspace, 8"
-      "$mainMod SHIFT, 9, movetoworkspace, 9"
-      "$mainMod SHIFT, 0, movetoworkspace, 10"
+      # Move active window to a workspace with mainMod + ALT + [0-9]
+      "$mainMod ALT, 1, movetoworkspace, 1"
+      "$mainMod ALT, 2, movetoworkspace, 2"
+      "$mainMod ALT, 3, movetoworkspace, 3"
+      "$mainMod ALT, 4, movetoworkspace, 4"
+      "$mainMod ALT, 5, movetoworkspace, 5"
+      "$mainMod ALT, 6, movetoworkspace, 6"
+      "$mainMod ALT, 7, movetoworkspace, 7"
+      "$mainMod ALT, 8, movetoworkspace, 8"
+      "$mainMod ALT, 9, movetoworkspace, 9"
+      "$mainMod ALT, 0, movetoworkspace, 10"
 
       # Scroll through existing workspaces with mainMod + scroll
       "$mainMod, mouse_down, workspace, e+1"
@@ -70,7 +70,7 @@
 
       # Scratchpad
       "$mainMod, S, togglespecialworkspace,  magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      "$mainMod ALT, S, movetoworkspace, special:magic"
     ];
 
     bindm = [

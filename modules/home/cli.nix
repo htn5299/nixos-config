@@ -44,6 +44,7 @@
     timer
     speechd
     usbutils
+    showmethekey
 
     # Archives
     unar
