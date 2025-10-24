@@ -9,7 +9,7 @@
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/hosts.nix
     ../../modules/nixos/hyprland.nix
-    ../../modules/nixos/kanata.nix
+    ../../modules/nixos/remap.nix
     ../../modules/nixos/network.nix
     ../../modules/nixos/pipewire.nix
     ../../modules/nixos/postgresql.nix

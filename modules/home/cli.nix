@@ -43,6 +43,7 @@
     lolcat
     timer
     speechd
+    usbutils
 
     # Archives
     unar

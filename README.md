@@ -1,7 +1,7 @@
 # nixos-config
 
 ```sh
-sudo nixos-rebuild switch --flake ~/nixos-config/#${host}
+sudo nixos-rebuild switch --flake ~/nixos-config#${host}
 nix run home-manager --no-write-lock-file -- switch --flake ~/nixos-config#${username}@${host}
 sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#${host}
 nix flake update --flake ~/nixos-config#
