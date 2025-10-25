@@ -74,6 +74,10 @@ def notify(title, message):
         subprocess.run(["notify-send", title, message])
     except:
         pass
+    try:
+        subprocess.run(["spd-say", f"{title}. {message}"])
+    except:
+        pass
 
 
 def output_for_waybar(state):

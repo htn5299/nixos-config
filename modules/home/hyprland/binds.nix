@@ -17,7 +17,7 @@
       "$mainMod ALT, I, exec, hyprpicker -an"
       # "$mainMod ALT, B, exec, pkill waybar || waybar &"
       "$mainMod, R, exec, swaync-client -t"
-      "$mainMod ALT, L, exec, rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
+      "$mainMod ALT, M, exec, rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 15em;} listview {lines: 5;}'"
       ", Print, exec, grimblast --notify --freeze copysave area"
 
       # Move focus with mainMod + arrow keys

@@ -4,7 +4,8 @@
     telegram-desktop
     firefox
     # vesktop
-    google-chrome
+    # google-chrome
+    chromium
     discord
     qbittorrent
     calibre
